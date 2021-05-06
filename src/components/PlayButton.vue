@@ -1,14 +1,19 @@
-import * as Tone from 'tone'
-
 <template>
-  <button :disabled="!isLoaded" @click="handleClick">
-      Play
-    </button>
+  <button @click="handleClick">
+    Play
+  </button>
 </template>
 
 <script>
-export default {
-  name: 'PlayButton'
+import * as Tone from 'tone'
+  export default {
+  name: 'PlayButton',
+  methods: {
+    handleClick() {
+      const synth = new Tone.Synth().toDestination();
+      synth.triggerAttackRelease("C4", "8n");
+    }
+  }
 }
 </script>
 
