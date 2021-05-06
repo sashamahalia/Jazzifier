@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "tonal": "^2.2.2",
+    "tone": "^14.7.77",
     "vue": "^2.6.11"
   },
   "devDependencies": {
