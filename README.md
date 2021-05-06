@@ -1,5 +1,7 @@
 # jazzifier
 
+Take a plain chord and press a button to jazzify it. Built in Vue, with Tone and Tonal libraries.
+
 ## Project setup
 ```
 npm install
