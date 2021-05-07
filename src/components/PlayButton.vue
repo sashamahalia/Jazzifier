@@ -16,7 +16,6 @@ import * as Tone from 'tone'
   },
   methods: {
     handleClick() {
-      if (synth) { synth.dispose(); }
       // const synth = new Tone.PolySynth(Tone.Synth).toDestination();
       this.switchPlay();
 

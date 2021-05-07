@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Jazzifier"/>
     <PlayButton />
   </div>
@@ -29,7 +28,8 @@ export default {
   margin-top: 60px;
 }
 button {
-    background-color: green;
+    margin: 20px;
+    background-color: purple;
     color: white;
   }
 </style>
