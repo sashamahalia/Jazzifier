@@ -27,7 +27,7 @@ import * as Tone from 'tone'
 
 
       const chordPart = new Tone.Part((time, chord )=> {
-              synth.triggerAttackRelease(chord, "1m", time);
+              synth.triggerAttackRelease(chord, "2m", time);
             }, [[0, "C3"], ["0:2", "D3"], ["0:3", "G4"], ["0:4", "G5"]]).start(0);
 
       chordPart.loop = true;
