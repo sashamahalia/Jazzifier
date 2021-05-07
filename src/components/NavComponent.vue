@@ -1,5 +1,5 @@
 <template>
-  <nav>potato cucumber</nav>
+  <nav><span class="navlink">Jazzifier</span> <span class="navlink">Info</span></nav>
 </template>
 
 <script>
@@ -22,5 +22,12 @@ nav {
   font-family: "Oswald", sans-serif;
   */
   background-color: purple;
+  display: flex;
+  justify-content: space-between;
+
 }
+
+.navlink {
+  padding: 1em;
+}  
 </style>

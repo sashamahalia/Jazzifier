@@ -1,23 +1,29 @@
 <template>
   <div id="app">
-    <NavComponent /> <p>nav should be rendering here</p>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Jazzifier"/>
+    <NavComponent />
+    <Piano />
+    <ChordSelector />
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
+    <!-- <HelloWorld msg="Jazzifier"/> -->
     <PlayButton />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import PlayButton from './components/PlayButton.vue'
 import NavComponent from './components/NavComponent.vue'
+import Piano from './components/Piano.vue'
+import ChordSelector from './components/ChordSelector.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    // HelloWorld,
     PlayButton,
-    NavComponent
+    NavComponent,
+    Piano,
+    ChordSelector
   }
 }
 </script>
