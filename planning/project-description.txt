@@ -1,0 +1,46 @@
+Jazzifier
+
+The app has a way to select chords, a piano display and a big cool looking button called Jazzify. A user selects four basic major or minor chords and can press play to hear them as a loop, and see the notes of each chord show up on the piano.
+
+When you hit the jazzify button it randomly selects a more complex, jazzier version of each chord using relative addition/subtraction from the original chord’s root note (chord notes are represented as an array in Tone). Users then can press play to hear their jazzified chords and see them show up on the piano display.
+
+The chord data could be stored as an object with numerical keys, where the property of each key is itself an object which contains an array of relative values, the chord name, a brief text description of it.
+
+Or could be done through a js library like Tonal or Sharp11
+
+Tech Stack
+Tone Js - full featured front end javascript library for music creation
+Tonal Js - JS music theory library that handles chord creation
+Sharp11? Jazz focused music through JS library that turns strings into chord data.
+Vue - Works well with our single page app, will be a fun challenge to learn, but also intuitive.
+No pressing need for much in the way of back-end since chord information would live within the front end. We could use express if we need it to deploy to Heroku (and if we want to).
+
+Components that need state:
+
+Play- play or stop
+Piano keys - selected or not
+Initial chord input - string or array
+Current beat - Int
+Jazzified chord - object with values, name, description
+
+Examples: 
+https://react.christmas/2020/15
+^an article that shows creating a playing piano and sequencer with tone and react
+
+https://chordchord.com/
+^ I found this site after looking for idea that mirrored my own, and it’s pretty similar, and uses Tone.js and React! It only has fully randomly generated chords though, rather than transforming user inputed ones, and the chords are fairly tame.
+
+http://julianrosenblum.com/sharp11-client/#
+^
+Advanced jazz code engine.
+
+https://tonejs.github.io/demos
+^ examples of all the kinds of projects that can be made with Tone, and what layouts they use.
+
+What problem does it solve and who will use it?
+Problem might be an overstatement, but a lot of people make amazing music without having a formal music background, but might be held back by a lack of knowledge of more advanced chords, which can expand their musical and emotional palette. It would be fun and potentially useful to spark inspiration for musicians of all levels.
+
+
+
+
+
