@@ -1,19 +1,19 @@
 <template>
   <div id="app">
     <HelloWorld msg="Jazzifier"/>
-    <PlayButton />
+    <PlayButtonTest />
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-import PlayButton from './components/PlayButton.vue'
+import PlayButtonTest from './components/PlayButtonTest.vue'
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    PlayButton
+    PlayButtonTest
   }
 }
 </script>
