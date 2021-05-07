@@ -28,16 +28,22 @@ export default {
 }
 </script>
 
-<style>  
-/* lang="scss" */
-#app {
-  @import url('https://fonts.googleapis.com/css2?family=Julee&family=PT+Sans&display=swap');
-  font-family: 'Julee', cursive;
-  /* font-family: 'PT Sans', sans-serif; */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #230417;
-  margin-top: 5.5em;
-}
+<style lang="scss">  
+  /* lang="scss" */
+
+  $base-color: green;
+
+  #app {
+    
+
+    @import url('https://fonts.googleapis.com/css2?family=Julee&family=PT+Sans&display=swap');
+    font-family: 'Julee', cursive;
+    /* font-family: 'PT Sans', sans-serif; */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    // color: #230417;
+    background-color: $base-color;
+    margin-top: 5.5em;
+  }
 </style>
