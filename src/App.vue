@@ -28,7 +28,8 @@ export default {
 }
 </script>
 
-<style>
+<style>  
+/* lang="scss" */
 #app {
   @import url('https://fonts.googleapis.com/css2?family=Julee&family=PT+Sans&display=swap');
   font-family: 'Julee', cursive;
@@ -36,7 +37,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #230417;
   margin-top: 5.5em;
 }
 </style>
