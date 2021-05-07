@@ -8,6 +8,7 @@ const chord3 = ["E3", "G4", "B4"];
 const chord4 = ["F3", "A4", "C4"];
 
 
+//mainChords syntax inspired by https://www.devbridge.com/articles/tonejs-coding-music-production-guide/
 const mainChords = [
   {'time': '0:0', 'note': chord3, 'duration': '1m'},
   {'time': '1:0', 'note': chord4, 'duration': '1m'},
@@ -20,6 +21,7 @@ export const loop = new Tone.Part((time, value) => {
     synth.triggerAttackRelease(value.note, value.duration, time);
 }, mainChords).start(0);
 
+//tells a the pattern to loop for four measures
 loop.loopStart = 0
 loop.loopEnd = "4m";
 loop.loop = true;
