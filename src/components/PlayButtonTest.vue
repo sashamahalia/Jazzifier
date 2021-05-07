@@ -7,6 +7,7 @@
 
 <script>
 import * as Tone from 'tone'
+import { synth, chordLoop } from '../helpers/loop.js'
     export default {
     name: 'PlayButton',
     //where state lives
@@ -17,21 +18,17 @@ import * as Tone from 'tone'
     },
     methods: {
       handleClick() {
-        const synth = new Tone.MembraneSynth().toDestination();
-      // eslint-disable-next-line no-unused-vars
-        const loop = new Tone.Loop(function(time) {
-          //triggered every eighth note.
-          console.log(time);
-          synth.triggerAttackRelease("C2", "2n");
-        }, "2n").start(0);
+
+        synth;
+        chordLoop;
 
         if (!this.playing) {
-        Tone.start();
-        Tone.Transport.start();
-        this.playing = true;
-      } else {
-        Tone.Transport.stop();
-        this.playing = false;
+          Tone.start();
+          Tone.Transport.start();
+          this.playing = true;
+        } else {
+          Tone.Transport.stop();
+          this.playing = false;
       }
     }
   }
