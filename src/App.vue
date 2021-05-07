@@ -44,6 +44,7 @@ export default {
     text-align: center;
     // color: #230417;
     background-color: $base-color;
+    color: $globalcolor;
     margin-top: 5.5em;
   }
 </style>

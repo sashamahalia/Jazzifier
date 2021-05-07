@@ -1,8 +1,9 @@
-// module.exports = {
-//   chainWebpack: config => {
-//     config.module
-//       .rule('vue')
-//       .use('vue-loader').loader('sass-loader')
-
-//   }
-// }
+module.exports = {
+  css: {
+    loaderOptions: {
+      sass: {
+        data: '$globalcolor: red;'
+      }
+    }
+  }
+}
