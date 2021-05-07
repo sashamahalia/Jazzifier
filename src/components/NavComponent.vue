@@ -21,13 +21,15 @@ nav {
   /* 
   font-family: "Oswald", sans-serif;
   */
-  background-color: purple;
+  background-color: #691048;
   display: flex;
   justify-content: space-between;
 
 }
 
 .navlink {
-  padding: 1em;
+  padding: .75em;
+  /* background-color: cyan; */
+  font-size: 1.5em;
 }  
 </style>
