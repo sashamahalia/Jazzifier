@@ -1,11 +1,12 @@
 import * as Tone from 'tone'
+import s11 from 'sharp11'
 
 const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
-const chord1 = ["C3", "E4", "G4"];
-const chord2 = ["D3", "F4", "A4"];
-const chord3 = ["E3", "G4", "B4"];
-const chord4 = ["F3", "A4", "C4"];
+const chord1 = ["C3", "E4", "G4", "A4"];
+const chord2 = ["D3", "F4", "A4", "B4"];
+const chord3 = ["E3", "G4", "B4", "C4"];
+const chord4 = ["F3", "A4", "C4", "E4"];
 
 
 //mainChords syntax inspired by https://www.devbridge.com/articles/tonejs-coding-music-production-guide/
@@ -17,7 +18,8 @@ const mainChords = [
 ];
 
 export const loop = new Tone.Part((time, value) => {
-    console.log(time);
+  //value.note is the array of notes in the chord, s11.identify analysis what chord it is and returns the chord name as a string
+    console.log(s11.chord.identify(...value.note));
     synth.triggerAttackRelease(value.note, value.duration, time);
 }, mainChords).start(0);
 
