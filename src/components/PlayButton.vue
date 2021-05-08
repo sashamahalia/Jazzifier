@@ -6,7 +6,9 @@
 
 <script>
 import * as Tone from 'tone'
-import { synth, chordLoop, bpm } from '../helpers/loop.js'
+import { chordLoop } from '../helpers/loop'
+import { synth } from '../helpers/synth'
+import { bpm } from '../helpers/bpm'
 
   export default {
   name: 'PlayButton',
@@ -18,7 +20,7 @@ import { synth, chordLoop, bpm } from '../helpers/loop.js'
   },
   methods: {
     handleClick() {
-      bpm(200);
+      bpm(100);
       synth;
       chordLoop;
       this.switchPlay();
