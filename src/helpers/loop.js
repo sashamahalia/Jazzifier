@@ -1,7 +1,7 @@
 import * as Tone from 'tone'
 import s11 from 'sharp11'
 
-const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+export const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
 const chord1 = ["C3", "E4", "G4", "A4"];
 const chord2 = ["D3", "F4", "A4", "B4"];
@@ -17,15 +17,15 @@ const mainChords = [
   {'time': '3:0', 'note': chord1, 'duration': '1m'},
 ];
 
-export const loop = new Tone.Part((time, value) => {
-  //value.note is the array of notes in the chord, s11.identify analysis what chord it is and returns the chord name as a string
-    console.log(s11.chord.identify(...value.note));
+export const chordLoop = new Tone.Part((time, value) => {
+  //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
+    document.getElementById("chord-name").innerHTML = s11.chord.identify(...value.note);
     synth.triggerAttackRelease(value.note, value.duration, time);
 }, mainChords).start(0);
 
 //tells a the pattern to loop for four measures
-loop.loopStart = 0
-loop.loopEnd = "4m";
-loop.loop = true;
+chordLoop.loopStart = 0
+chordLoop.loopEnd = "4m";
+chordLoop.loop = true;
 
  

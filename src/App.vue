@@ -6,6 +6,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <PlayButton />
+    <h2 id="chord-name"></h2>
   </div>
 </template>
 

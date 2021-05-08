@@ -1,19 +1,20 @@
 <template>
-  <button @click="handleClick">
+  <button id="play" @click="handleClick">
     {{ play }}
   </button>
 </template>
 
 <script>
 import * as Tone from 'tone'
-import { synth, chordLoop } from '../helpers/loop.js'
+import { synth, chordLoop, chord } from '../helpers/loop.js'
 
   export default {
   name: 'PlayButton',
   //where state lives
   data() {
     return {
-      play: 'Play'
+      play: 'Play',
+      chord: ''
     };
   },
   methods: {
@@ -21,6 +22,7 @@ import { synth, chordLoop } from '../helpers/loop.js'
       synth;
       chordLoop;
       this.switchPlay();
+      this.chord = chord;
 
     },
     //switch state between play and stop text, start and stop playback.
