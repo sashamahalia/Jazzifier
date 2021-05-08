@@ -2,7 +2,8 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        data: '$globalcolor: red;'
+        data: '@import "@/assets/css/_colors.scss";'
+        
       }
     }
   }

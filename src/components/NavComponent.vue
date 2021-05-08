@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style >
+<style lang="scss" >
 nav {
   width: 100%;
   color: white;
@@ -21,7 +21,7 @@ nav {
   /* 
   font-family: "Oswald", sans-serif;
   */
-  background-color: #691048;
+  background-color: $darker-purple;
   display: flex;
   justify-content: space-between;
 

@@ -31,8 +31,6 @@ export default {
 <style lang="scss">  
   /* lang="scss" */
 
-  $base-color: green;
-
   #app {
     
 
@@ -42,9 +40,7 @@ export default {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    // color: #230417;
-    background-color: $base-color;
-    color: $globalcolor;
     margin-top: 5.5em;
+    background-color: $light-pink;
   }
 </style>
