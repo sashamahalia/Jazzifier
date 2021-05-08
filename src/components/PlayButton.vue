@@ -6,7 +6,7 @@
 
 <script>
 import * as Tone from 'tone'
-import { synth, chordLoop, chord } from '../helpers/loop.js'
+import { synth, chordLoop, bpm } from '../helpers/loop.js'
 
   export default {
   name: 'PlayButton',
@@ -14,15 +14,14 @@ import { synth, chordLoop, chord } from '../helpers/loop.js'
   data() {
     return {
       play: 'Play',
-      chord: ''
     };
   },
   methods: {
     handleClick() {
+      bpm(200);
       synth;
       chordLoop;
       this.switchPlay();
-      this.chord = chord;
 
     },
     //switch state between play and stop text, start and stop playback.
