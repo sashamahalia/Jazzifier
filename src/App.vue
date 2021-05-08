@@ -2,6 +2,7 @@
   <div id="app">
     <HelloWorld msg="Jazzifier"/>
     <PlayButton />
+    <h2 id="chord-name"></h2>
   </div>
 </template>
 
