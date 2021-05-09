@@ -1,6 +1,7 @@
 import * as Tone from 'tone';
 import { synth } from './synth'
 import { chords } from './chords'
+import playButton from '../components/PlayButton.vue'
 
 import s11 from 'sharp11';
 
@@ -20,7 +21,23 @@ export const chordLoop = new Tone.Part((time, value) => {
   //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
     document.getElementById("chord-name").innerHTML = s11.chord.identify(...value.note);
     //testing how to conditionally display based on each beat
-    if (value.note === chords.chord1) { console.log(1) }
+    if (value.note === chords.chord1){
+      playButton.data.chord = s11.chord.identify(...value.note)
+      console.log(playButton.data.chord)
+    }
+    if (value.note === chords.chord2){
+      playButton.data.chord = s11.chord.identify(...value.note)
+      console.log(playButton.data.chord)
+    }
+    if (value.note === chords.chord3){
+      playButton.data.chord = s11.chord.identify(...value.note)
+      console.log(playButton.data.chord)
+    }
+    if (value.note === chords.chord4){
+      playButton.data.chord = s11.chord.identify(...value.note)
+      console.log(playButton.data.chord)
+    }
+
     synth.triggerAttackRelease(value.note, value.duration, time);
 }, mainChords).start(0);
 

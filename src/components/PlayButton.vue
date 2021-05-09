@@ -1,6 +1,6 @@
 <template>
   <button id="play" @click="handleClick">
-    {{ play }}
+    {{ `${play} ${chord}` }}
   </button>
 </template>
 
@@ -16,6 +16,7 @@ import { bpm } from '../helpers/bpm'
   data() {
     return {
       play: 'Play',
+      chord: ''
     };
   },
   methods: {
