@@ -1,7 +1,7 @@
-import Vue from "vue"
+import Vue from "vue";
 import * as Tone from 'tone';
-import { synth } from './synth'
-import { chords } from './chords'
+import { synth } from './synth';
+import { chords } from './chords';
 import s11 from 'sharp11';
 
 //using synth and chords from helper functions
@@ -17,23 +17,15 @@ const mainChords = [
 ];
 
 //this makes a one-off state store for sharing between files
-export const chordState = new Vue.observable({chord: ''})
+export const chordState = new Vue.observable({chord: ''});
 
 export const chordLoop = new Tone.Part((time, value) => {
     //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
     //conditionally renders chord name as state
-    if (value.note === chords.chord1){
-      chordState.chord = s11.chord.identify(...value.note)
-      console.log(chordState.chord)
-    }
-    if (value.note === chords.chord2){
-      chordState.chord = s11.chord.identify(...value.note)
-    }
-    if (value.note === chords.chord3){
-      chordState.chord = s11.chord.identify(...value.note)
-    }
-    if (value.note === chords.chord4){
-      chordState.chord = s11.chord.identify(...value.note)
+    for (const chord in chords) {
+      if (value.note === chords[chord]){
+        chordState.chord = s11.chord.identify(...value.note);
+      }
     }
 
     synth.triggerAttackRelease(value.note, value.duration, time);
