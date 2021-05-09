@@ -1,12 +1,12 @@
 <template>
   <button id="play" @click="handleClick">
-    {{ `${play} ${chord}` }}
+    {{ `${play} ${currentChord}` }}
   </button>
 </template>
 
 <script>
 import * as Tone from 'tone'
-import { chordLoop } from '../helpers/loop'
+import { chordLoop, chordState } from '../helpers/loop'
 import { synth } from '../helpers/synth'
 import { bpm } from '../helpers/bpm'
 
@@ -16,8 +16,13 @@ import { bpm } from '../helpers/bpm'
   data() {
     return {
       play: 'Play',
-      chord: ''
+      chord: this.currentChord
     };
+  },
+  computed: {
+    currentChord() {
+      return chordState.chord
+    }
   },
   methods: {
     handleClick() {
