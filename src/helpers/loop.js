@@ -24,7 +24,7 @@ export const chordLoop = new Tone.Part((time, value) => {
     //conditionally renders chord name as state
     for (const chord in chords) {
       if (value.note === chords[chord]){
-        chordState.chord = s11.chord.identify(...value.note);
+        chordState.chord = s11.chord.identifyArray(value.note);
         chordState.beat = chord;
       }
     }

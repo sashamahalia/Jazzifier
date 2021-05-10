@@ -1,15 +1,15 @@
 import s11 from 'sharp11';
 
-const selectChords = ['Emaj7#11', 'Gm6', 'F/C', 'C'];
+const selectChords = ['C', 'G', 'Am', 'Bm'];
 
-const chordArray = selectChords.map(chord => s11.chord.create(chord));
+const chordArray = selectChords.map(chord => s11.chord.create(chord, 3));
 console.log(chordArray);
 
 //chordArray is an array of Sharp 11 chord objects which have bunch of info
 //including the letter names of each note in the chord which is what we're returning
 //Added a '3' to make the notes readable by Tone, but it's not a perfect solution and sometime leads to weird results
 const chordNotes = chordArray.map(chordInfo => chordInfo.chord.map(note => {
-  return `${note.letter}3`
+  return `${note.letter}${note.octave}`
 }));
 
 export const chords = {
