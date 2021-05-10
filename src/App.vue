@@ -7,6 +7,7 @@
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <PlayButton />
     <h2 id="chord-name"></h2>
+    <Dropdown :options="[1, 2, 3, 4]"></Dropdown>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import PlayButton from './components/PlayButton.vue'
 import NavComponent from './components/NavComponent.vue'
 import Piano from './components/Piano.vue'
 import ChordSelector from './components/ChordSelector.vue'
+import Dropdown from './components/Dropdown.vue'
 
 export default {
   name: 'App',
@@ -24,7 +26,8 @@ export default {
     PlayButton,
     NavComponent,
     Piano,
-    ChordSelector
+    ChordSelector,
+    Dropdown
   }
 }
 </script>
