@@ -12,9 +12,11 @@ export default {
 
 <style lang="scss">
 .middlekey {
-  padding: 1em;
-  height: 5em;
+  z-index: 2;
+  padding: $accidental-width;
+  height: 1.5em;
   background-color: blue;
-  clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
+  margin: 0 0 0 $accidental-width * -1;
+  // clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
 }  
 </style>

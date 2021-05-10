@@ -4,13 +4,13 @@
     <div class="keys">
       <LeftKey />
       <MiddleKey />
-      <LeftKey />
-      <LeftKey />
-      <LeftKey />
-      <LeftKey />
-      <LeftKey />
-      
-    
+      <LeftKey offset = true />
+      <MiddleKey />
+      <LeftKey offset = true />
+      <MiddleKey />
+      <LeftKey offset = true />
+      <LeftKey  />
+      <LeftKey  />    
     </div>
   </div>
 </template>
