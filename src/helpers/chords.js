@@ -1,6 +1,6 @@
 import s11 from 'sharp11';
 
-const selectChords = ['C', 'G', 'Am', 'Bm'];
+const selectChords = ['C', 'G', 'Am', 'Bdim'];
 
 const chordArray = selectChords.map(chord => s11.chord.create(chord, 3));
 console.log(chordArray);
