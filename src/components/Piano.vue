@@ -2,13 +2,13 @@
   <div>   
     <p>Piano goes here potato</p>
     <div class="keys">
-      <LeftKey />
+      <LeftKey keycolor=red  pressed=true />
       <MiddleKey />
-      <LeftKey offset = true />
+      <LeftKey offset=true keycolor=orange pressed=true />
       <MiddleKey />
-      <LeftKey offset = true />
+      <LeftKey offset=true keycolor=yellow pressed=true />
       <MiddleKey />
-      <LeftKey offset = true />
+      <LeftKey offset=true keycolor=green pressed=true />
       <LeftKey  />
       <LeftKey  />    
     </div>

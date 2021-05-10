@@ -1,5 +1,8 @@
 <template lang="">
-  <div class="left-key" :class="offset ? 'left-offset' : '' ">
+  <div class="left-key"
+  :class="{'left-offset': offset, 'press-style': pressed}"  
+  
+  >
     <span></span>
   </div>
 </template>
@@ -8,8 +11,11 @@
 export default {
   name: 'LeftKey',
   props: [
-    'offset'
-  ]
+    'offset',
+    'keycolor',
+    'pressed'
+  ],
+  
 }
 </script>
 
@@ -18,7 +24,7 @@ export default {
   z-index: 1;
   padding: $accidental-width * 1.25;
   height: $accidental-width * 6;
-  
+
   background-color: white;
   border: 1px solid $darkest-purple;
   // clip-path: polygon(0 0, 50% 0, 50% 50%, 100% 50%, 100% 100%, 0 100%);
@@ -28,5 +34,9 @@ export default {
   margin: 0 0 0 $accidental-width * -1
   // background-color: purple;
 
+}
+
+.press-style {
+  background-color: orange;
 }
 </style>
