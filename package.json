@@ -13,7 +13,8 @@
     "sharp11": "^2.0.2",
     "tonal": "^2.2.2",
     "tone": "^14.7.77",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-select": "^3.11.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
