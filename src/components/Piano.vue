@@ -1,21 +1,27 @@
 <template lang="">
-  <div>
+  <div>   
     <p>Piano goes here potato</p>
     <div class="keys">
       <LeftKey />
+      <MiddleKey />
       <LeftKey />
       <LeftKey />
       <LeftKey />
       <LeftKey />
+      <LeftKey />
+      
+    
     </div>
   </div>
 </template>
 <script>
 import LeftKey from './pianokeys/LeftKey';
+import MiddleKey from './pianokeys/MiddleKey';
 export default {
   name: 'Piano',
   components: {
-    LeftKey
+    LeftKey,
+    MiddleKey
   }
   
 }
