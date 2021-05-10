@@ -1,12 +1,21 @@
 <template>
-  <vSelect :options="options"></vSelect>
+  <section>
+    <v-select placeholder="pick a chord" :options="options"></v-select>
+    <v-select placeholder="pick a chord" :options="options"></v-select>
+    <v-select placeholder="pick a chord" :options="options"></v-select>
+    <v-select placeholder="pick a chord" :options="options"></v-select>
+    </section>
 </template>
 
 <script>
 // import romanNums from '../helpers/basicChordLibrary'
+import vSelect from 'vue-select';
   export default {
     name: 'Dropdown',
-    props: [options]
+    components: {
+      vSelect
+    },
+    props: ['options']
   }
 </script>
 

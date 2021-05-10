@@ -7,7 +7,10 @@
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <PlayButton />
     <h2 id="chord-name"></h2>
-    <Dropdown :options="[1, 2, 3, 4]"></Dropdown>
+    <Dropdown options="['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']"></Dropdown>
+
+
+
   </div>
 </template>
 
