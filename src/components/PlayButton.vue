@@ -1,7 +1,11 @@
 <template>
-  <button id="play" @click="handleClick">
-    {{ `${play} ${currentChord}` }}
-  </button>
+  <div>
+    <h2>{{ currentChord }}</h2>
+    <button id="play" @click="handleClick">
+      {{ play }}
+    </button>
+    <h3>{{ currentBeat }}</h3>
+  </div>
 </template>
 
 <script>
@@ -22,6 +26,9 @@ import { bpm } from '../helpers/bpm'
   computed: {
     currentChord() {
       return chordState.chord
+    },
+    currentBeat() {
+      return chordState.beat
     }
   },
   methods: {
