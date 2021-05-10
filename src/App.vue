@@ -7,7 +7,7 @@
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <PlayButton />
     <h2 id="chord-name"></h2>
-    <Dropdown options="['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']"></Dropdown>
+    <Dropdown @input="getInput"></Dropdown>
 
 
 
@@ -31,6 +31,16 @@ export default {
     Piano,
     ChordSelector,
     Dropdown
+  },
+  data() {
+    return {
+      chordInput: { chord1: '', chord2: '', chord3: '', chord4: '' }
+    }
+  },
+  computed: {
+    getInput() {
+      return 'hi'
+    }
   }
 }
 </script>
