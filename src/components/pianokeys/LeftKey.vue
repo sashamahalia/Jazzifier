@@ -16,10 +16,11 @@ export default {
 <style lang="scss">
 .left-key {
   z-index: 1;
-  padding: 1em;
-  height: 5em;
-  background-color: orange;
-  border: 1px solid;
+  padding: $accidental-width * 1.25;
+  height: $accidental-width * 6;
+  
+  background-color: white;
+  border: 1px solid $darkest-purple;
   // clip-path: polygon(0 0, 50% 0, 50% 50%, 100% 50%, 100% 100%, 0 100%);
 } 
 
