@@ -1,15 +1,16 @@
 <template>
-  <div id="app">
+  <section id="chord-select">
+    <div v-for="position in positions" :key="position.beat" class="position.beat">
+      <h4>{{ position.chord }}</h4>
       <v-select 
-        v-for="position in positions"
         :options="chords"
         placeholder="Select chord"
-        :key="position.beat"
         :value="position.chord"
         @input="chord => updateChord(position, chord)"
         >
         </v-select>
-  </div>
+      </div>
+  </section>
 </template>
 
 <script>
@@ -19,15 +20,10 @@ export default {
   name: 'Dropdown',
   data() {
     return {
-      chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
-      positions: [
-        { beat: 1, chord: '' },
-        { beat: 2, chord: '' },
-        { beat: 3, chord: '' },
-        { beat: 4, chord: '' },
-      ],
+      chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
     }
   },
+  props: ['positions'],
   components: {
     vSelect
   },
@@ -45,5 +41,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+  #chord-select {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 
 </style>

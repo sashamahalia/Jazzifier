@@ -7,8 +7,7 @@
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <PlayButton />
     <h2 id="chord-name"></h2>
-    <Dropdown @input="getInput"></Dropdown>
-    <Iterate></Iterate>
+    <Dropdown :positions="positions"></Dropdown>
   </div>
 </template>
 
@@ -32,13 +31,16 @@ export default {
   },
   data() {
     return {
-      chordInput: { chord1: '', chord2: '', chord3: '', chord4: '' }
+      positions: [
+        { beat: 1, chord: 'Chord 1' },
+        { beat: 2, chord: 'Chord 2' },
+        { beat: 3, chord: 'Chord 3' },
+        { beat: 4, chord: 'Chord 4' },
+      ]
     }
   },
   computed: {
-    getInput() {
-      return 'hi'
-    }
+    
   }
 }
 </script>
