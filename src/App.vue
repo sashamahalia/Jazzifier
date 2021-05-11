@@ -8,9 +8,7 @@
     <PlayButton />
     <h2 id="chord-name"></h2>
     <Dropdown @input="getInput"></Dropdown>
-
-
-
+    <Iterate></Iterate>
   </div>
 </template>
 
@@ -20,7 +18,8 @@ import PlayButton from './components/PlayButton.vue'
 import NavComponent from './components/NavComponent.vue'
 import Piano from './components/Piano.vue'
 import ChordSelector from './components/ChordSelector.vue'
-import Dropdown from './components/Dropdown.vue'
+import Dropdown from './components/test-dropdown.vue'
+import Iterate from './components/iterate'
 
 export default {
   name: 'App',
@@ -30,7 +29,8 @@ export default {
     NavComponent,
     Piano,
     ChordSelector,
-    Dropdown
+    Dropdown,
+    Iterate
   },
   data() {
     return {
