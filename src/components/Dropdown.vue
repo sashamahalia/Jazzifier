@@ -29,13 +29,16 @@ export default {
   },
   methods: {
   updateChord (position, newChord) {
-    console.log(newChord);
+    if (!newChord) {
+      console.log('hi');
+      return position.chord = `Chord ${position.beat}`;
+    }
     position.chord = newChord;
-    console.log(this.positions);
+    console.log(position.chord);
   },
   },
   computed: {
-    options: () => this.chords,
+    options: () => this.chords
   }
 }
 </script>
