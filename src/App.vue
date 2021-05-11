@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavComponent />
-    <Piano />
+    <Piano chord='chordstring' />
     <ChordSelector />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->

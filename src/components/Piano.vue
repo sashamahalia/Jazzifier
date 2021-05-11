@@ -1,7 +1,7 @@
 <template lang="">
   <div>   
     <div>
-      <p>Debug time!</p>
+      <p>Debug time! {{ chord }} </p>
     </div>
     <div class="keys">
       <LeftKey keycolor=red />
@@ -32,16 +32,29 @@
   </div>
 </template>
 <script>
+import {  chordState } from '../helpers/loop'
 import LeftKey from './pianokeys/LeftKey';
 import MiddleKey from './pianokeys/MiddleKey';
 export default {
   name: 'Piano',
+  props: [
+    'chord'
+  ],
   components: {
     LeftKey,
     MiddleKey
+  },
+  computed: {
+    currentBeat() {
+      return chordState.beat
+    },
+    currentChord() {
+      return chordState.chord
+    }
   }
-  
 }
+console.log("KUMQUAT********************", chordState);
+// console.log("POTATO*******************", props[0]);
 </script>
 <style lang="scss">
 .keys {
