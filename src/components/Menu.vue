@@ -1,7 +1,7 @@
 <template>
   <div :class="name">
     <h5>{{ name }}</h5>
-    <v-select :options="options" :placeholder="placeholder"/>
+    <v-select :options="options" v-model="scale[type]"/>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
   import 'vue-select/dist/vue-select.css';
   export default {
     name: 'Menu',
-    props: [ 'name', 'placeholder', 'options' ],
+    props: [ 'name', 'options', 'scale', 'type' ],
       components: {
       vSelect
     }

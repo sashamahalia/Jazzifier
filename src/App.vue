@@ -11,7 +11,7 @@
       <JazzifyButton />
     </div>
     <div class="dropdowns">
-      <MenuList :keys='keys' :modes='modes'/>
+      <MenuList :keys="keys" :modes="modes" :scale="scale"/>
       <Dropdown :positions="positions" :chords="chords"/>
     </div>
   </div>
@@ -53,7 +53,8 @@ export default {
       ],
       chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
       keys: ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'],
-      modes: ['Major', 'Minor']
+      modes: ['Major', 'Minor'],
+      scale: {key: '', mode: ''}
     }
   }
 }
