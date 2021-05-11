@@ -53,7 +53,7 @@ export default {
       ],
       chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
       keys: ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'],
-      modes: ['major', 'minor']
+      modes: ['Major', 'Minor']
     }
   }
 }

@@ -43,6 +43,8 @@ export default {
 <style lang="scss" scoped>
 
   #chord-select {
+    align-self: center;
+    justify-self: center;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
