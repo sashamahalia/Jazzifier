@@ -17,7 +17,7 @@ const mainChords = [
 ];
 
 //this makes a one-off state store for sharing between files
-export const chordState = new Vue.observable({chord: '', beat: ''});
+export const chordState = new Vue.observable({chord: [], beat: ''});
 
 export const chordLoop = new Tone.Part((time, value) => {
     //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string

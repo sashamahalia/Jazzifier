@@ -14,7 +14,8 @@ export default {
   props: [
     'offset',
     'keycolor',
-    'pressed'
+    'pressed',
+    'note'
   ],
   computed: {
     computedClass(){
@@ -22,15 +23,14 @@ export default {
       if (this.offset) {result += 'left-offset ';}
       //change the next line to this.pressed for functionality to work
       //left to this.keycolor for easier bugtesting
-      if (this.keycolor) {result += 'key-'+this.keycolor}
+      // if (this.keycolor) {result += 'key-'+this.keycolor}
+      // console.log("AVOCADO*******************", this.pressed)
+      if (this.pressed && this.pressed.has(this.note)) {result += 'key-'+this.keycolor}
       
       return result;
     }
   }
-  // NEED TO TURN BACKGROUND COLORS.
-  // Needs to use prop keycolor, and needs to access a SASS global variable
-  // I need a way to connect those two
-  // Gonna come back to this
+
 }
 </script>
 
