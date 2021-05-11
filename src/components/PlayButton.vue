@@ -1,10 +1,10 @@
 <template>
   <div>
-    <h2>{{ currentChord }}</h2>
+    <!-- <h2>{{ currentChord }}</h2> -->
     <button id="play" @click="handleClick">
       {{ play }}
     </button>
-    <h3>{{ currentBeat }}</h3>
+    <!-- <h3>{{ currentBeat }}</h3> -->
   </div>
 </template>
 
@@ -60,5 +60,5 @@ import { bpm } from '../helpers/bpm'
 }
 </script>
 
-<style" scoped>
+<style scoped>
 </style>

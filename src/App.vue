@@ -5,7 +5,11 @@
     <ChordSelector />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->
-    <PlayButton :chord="chord" :beat="beat"/>
+
+    <div class="flexbox">
+      <PlayButton :chord="chord" :beat="beat"/>
+      <JazzifyButton />
+    </div>
     <Dropdown :positions="positions" :beat="beat" :chords="chords"/>
   </div>
 </template>
@@ -18,7 +22,7 @@ import Piano from './components/Piano.vue'
 import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
 import { chordState } from './helpers/loop'
-
+import JazzifyButton from './components/JazzifyButton'
 
 export default {
   name: 'App',
@@ -28,7 +32,8 @@ export default {
     NavComponent,
     Piano,
     ChordSelector,
-    Dropdown
+    Dropdown,
+    JazzifyButton
   },
   data() {
     return {
@@ -55,12 +60,24 @@ export default {
 </script>
 
 <style lang="scss">  
-  /* lang="scss" */
+
+  .flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
 
   button {
-    margin: 20px;
-    background-color: purple;
-    color: white;
+    padding: .75em;
+    background-color: $darker-purple;
+    color: white; 
+    border-radius: 1em;
+    border: none; 
+  }
+
+  button:hover {
+    background-color: white;
+    color: $darker-purple;
   }
 
   #app {
