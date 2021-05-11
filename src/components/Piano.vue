@@ -1,32 +1,29 @@
 <template lang="">
   <div>   
-    <div>
-      <p>Debug time! {{ chord }} </p>
-    </div>
     <div class="keys">
       <LeftKey note="C3" keycolor=red :pressed=currentPressedKeys />
-      <MiddleKey />
+      <MiddleKey note="C#3" keycolor=red :pressed=currentPressedKeys />
       <LeftKey note="D3" keycolor=orange offset=true :pressed=currentPressedKeys />
-      <MiddleKey />
+      <MiddleKey note="D#3" keycolor=red :pressed=currentPressedKeys />
       <LeftKey note="E3" keycolor=yellow offset=true :pressed=currentPressedKeys />
       <LeftKey note="F3" keycolor=green />
-      <MiddleKey />
+      <MiddleKey note="F#3" keycolor=red :pressed=currentPressedKeys />
       <LeftKey note="G3" keycolor=blue offset=true :pressed=currentPressedKeys />
-      <MiddleKey />
+      <MiddleKey note="G#3" keycolor=red :pressed=currentPressedKeys />
       <LeftKey note="A3" keycolor=indigo offset=true :pressed=currentPressedKeys />
-      <MiddleKey />
+      <MiddleKey note="A#3" keycolor=red :pressed=currentPressedKeys  />
       <LeftKey note="B3" keycolor=violet offset=true :pressed=currentPressedKeys />
       <LeftKey note="C4" keycolor=red :pressed=currentPressedKeys />
-      <MiddleKey />
+      <MiddleKey note="C#4" keycolor=red :pressed=currentPressedKeys />
       <LeftKey note="D4" keycolor=orange offset=true :pressed=currentPressedKeys />
-      <MiddleKey />
+      <MiddleKey note="D#4" keycolor=red :pressed=currentPressedKeys />
       <LeftKey note="E4" keycolor=yellow offset=true :pressed=currentPressedKeys />
       <LeftKey note="F4" keycolor=green  :pressed=currentPressedKeys />
-      <MiddleKey />
+      <MiddleKey note="F#4" keycolor=red :pressed=currentPressedKeys  />
       <LeftKey note="G4" keycolor=blue offset=true :pressed=currentPressedKeys />
-      <MiddleKey />
+      <MiddleKey note="G#4" keycolor=red :pressed=currentPressedKeys  />
       <LeftKey note="A4" keycolor=indigo offset=true :pressed=currentPressedKeys />
-      <MiddleKey />
+      <MiddleKey note="A#4" keycolor=red :pressed=currentPressedKeys  />
       <LeftKey note="B4" keycolor=violet offset=true :pressed=currentPressedKeys />
     </div>
   </div>

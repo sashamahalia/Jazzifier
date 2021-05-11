@@ -21,12 +21,7 @@ export default {
     computedClass(){
       let result = "";
       if (this.offset) {result += 'left-offset ';}
-      //change the next line to this.pressed for functionality to work
-      //left to this.keycolor for easier bugtesting
-      // if (this.keycolor) {result += 'key-'+this.keycolor}
-      // console.log("AVOCADO*******************", this.pressed)
       if (this.pressed && this.pressed.has(this.note)) {result += 'key-'+this.keycolor}
-      
       return result;
     }
   }
@@ -42,6 +37,7 @@ export default {
 
   background-color: white;
   border: 1px solid $darkest-purple;
+  border-radius:0 0 $accidental-width*.2 $accidental-width*.2;
   // clip-path: polygon(0 0, 50% 0, 50% 50%, 100% 50%, 100% 100%, 0 100%);
 } 
 
