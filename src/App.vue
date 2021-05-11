@@ -10,6 +10,9 @@
       <PlayButton :chord="chord" :beat="beat"/>
       <JazzifyButton />
     </div>
+    <Menu name="Scale"/>
+    <Menu name="Mode"/>
+    <Menu name="Instrument"/>
     <Dropdown :positions="positions" :beat="beat" :chords="chords"/>
   </div>
 </template>
@@ -23,6 +26,8 @@ import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
 import { chordState } from './helpers/loop'
 import JazzifyButton from './components/JazzifyButton'
+import Menu from './components/Menu.vue'
+
 
 export default {
   name: 'App',
@@ -33,7 +38,8 @@ export default {
     Piano,
     ChordSelector,
     Dropdown,
-    JazzifyButton
+    JazzifyButton,
+    Menu
   },
   data() {
     return {
@@ -43,17 +49,7 @@ export default {
         { beat: 3, chord: 'Chord 3' },
         { beat: 4, chord: 'Chord 4' },
       ],
-      chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
-      beat: this.currentBeat,
-      chord: this.currentChord
-    }
-  },
-  computed: {
-    currentBeat() {
-      return chordState.beat
-    },
-    currentChord() {
-      return chordState.chord
+      chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
     }
   }
 }

@@ -22,15 +22,12 @@ export default {
     return {
     }
   },
-  props: ['positions', 'beat', 'chords'],
+  props: ['positions', 'chords'],
   components: {
     vSelect
   },
   methods: {
     updateChord (position, newChord) {
-      console.log(this.positions);
-      console.log(this.beat);
-      console.log(this.chords)
       if (!newChord) {
         return position.chord = `Chord ${position.beat}`;
       }
