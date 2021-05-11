@@ -1,7 +1,7 @@
 <template>
   <section class="menus">
-    <Menu @select="passValue" :scale="scale" :options="keys" type="key" name="Key" />
-    <Menu @select="passValue" :scale="scale" :options="modes" type="mode" name="Mode" />
+    <Menu :scale="scale" :options="keys" type="key" name="Key" />
+    <Menu :scale="scale" :options="modes" type="mode" name="Mode" />
   </section>
 </template>
 
@@ -15,8 +15,7 @@ export default {
   props: ['keys', 'modes', 'scale'],
   watch: {
     passValue() {
-      // this.$emit('v-select', this.select)
-      console.log('hi');
+      this.$emit('v-select', this.select)
     }
   }
 }

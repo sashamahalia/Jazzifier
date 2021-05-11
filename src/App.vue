@@ -11,7 +11,7 @@
       <JazzifyButton />
     </div>
     <div class="dropdowns">
-      <MenuList :keys="keys" :modes="modes" :scale="scale"/>
+      <MenuList @passValue="console.log('hi')" :keys="keys" :modes="modes" :scale="scale"/>
       <Dropdown :positions="positions" :chords="chords"/>
     </div>
   </div>
@@ -28,7 +28,6 @@ import { chordState } from './helpers/loop'
 import JazzifyButton from './components/JazzifyButton'
 import Menu from './components/Menu.vue'
 import MenuList from './components/MenuList.vue'
-
 
 export default {
   name: 'App',

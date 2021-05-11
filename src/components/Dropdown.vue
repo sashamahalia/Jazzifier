@@ -16,6 +16,7 @@
 <script>
 import vSelect from 'vue-select';
 import 'vue-select/dist/vue-select.css';
+import { selectChords, selectedChords } from '../helpers/chords'
 export default {
   name: 'Dropdown',
   data() {
@@ -29,9 +30,13 @@ export default {
   methods: {
     updateChord (position, newChord) {
       if (!newChord) {
-        return position.chord = `Chord ${position.beat}`;
+        position.chord = `Chord ${position.beat}`;
+        return;
       }
       position.chord = newChord;
+    },
+    chordNumToNote() {
+      selectedChords.splice(0, 4, selectChords(this.positions));
     }
   },
   computed: {

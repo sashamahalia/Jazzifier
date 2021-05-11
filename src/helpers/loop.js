@@ -2,7 +2,7 @@ import Vue from "vue";
 import * as Tone from 'tone';
 import { synth } from './synth';
 import { chords } from './chords';
-// import s11 from 'sharp11';
+import s11 from 'sharp11';
 
 //using synth and chords from helper functions
 synth;
@@ -30,7 +30,7 @@ export const chordLoop = new Tone.Part((time, value) => {
     //conditionally renders chord name as state
     for (const chord in chords) {
       if (value.note === chords[chord]){
-        chordState.chord = chords[chord];
+        chordState.chord = s11.identify.chords[chord];
         chordState.beat = chord;
       }
     }
