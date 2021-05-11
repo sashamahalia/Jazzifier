@@ -2,7 +2,6 @@
   <section class="menus">
     <Menu name="Scale" />
     <Menu name="Mode" />
-    <Menu name="Instrument" />
   </section>
 </template>
 
@@ -19,7 +18,6 @@ import Menu from './Menu'
 <style lang="scss" scoped>
 
 .menus {
-  margin-left: 4em; 
   display: flex;
   flex-direction: column;
   align-items: flex-start;

@@ -1,21 +1,19 @@
 <template>
   <div id="app">
     <NavComponent />
+    <Menu name="Instrument" class="instrument"/>
     <Piano :chord=currentChord />
     <ChordSelector />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->
-
     <div class="flexbox">
       <PlayButton :chord="chord" :beat="beat"/>
       <JazzifyButton />
     </div>
-    <Menu name="Scale"/>
-    <Menu name="Mode"/>
-    <Menu name="Instrument"/>
-    <Dropdown :positions="positions" :beat="beat" :chords="chords"/>
-    <MenuList />
-    <Dropdown :positions="positions" :chords="chords"/>
+    <div class="dropdowns">
+      <MenuList :keys='keys' :modes='modes'/>
+      <Dropdown :positions="positions" :chords="chords"/>
+    </div>
   </div>
 </template>
 
@@ -54,7 +52,8 @@ export default {
         { beat: 4, chord: 'Chord 4' },
       ],
       chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
-      key: ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B']
+      keys: ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'],
+      modes: ['major', 'minor']
     }
   }
 }
@@ -92,5 +91,18 @@ export default {
     text-align: center;
     margin-top: 5.5em;
     background-color: $light-pink;
+  }
+
+  .dropdowns {
+    display: flex;
+    align-self: flex-end;
+    justify-content: center;
+
+  }
+
+  .instrument {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 </style>
