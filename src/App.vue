@@ -14,6 +14,8 @@
     <Menu name="Mode"/>
     <Menu name="Instrument"/>
     <Dropdown :positions="positions" :beat="beat" :chords="chords"/>
+    <MenuList />
+    <Dropdown :positions="positions" :chords="chords"/>
   </div>
 </template>
 
@@ -27,6 +29,7 @@ import Dropdown from './components/Dropdown.vue'
 import { chordState } from './helpers/loop'
 import JazzifyButton from './components/JazzifyButton'
 import Menu from './components/Menu.vue'
+import MenuList from './components/MenuList.vue'
 
 
 export default {
@@ -39,7 +42,8 @@ export default {
     ChordSelector,
     Dropdown,
     JazzifyButton,
-    Menu
+    Menu,
+    MenuList
   },
   data() {
     return {
@@ -49,7 +53,8 @@ export default {
         { beat: 3, chord: 'Chord 3' },
         { beat: 4, chord: 'Chord 4' },
       ],
-      chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
+      chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
+      key: ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B']
     }
   }
 }
