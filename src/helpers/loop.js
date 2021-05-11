@@ -10,6 +10,12 @@ chords;
 
 //mainChords syntax inspired by https://www.devbridge.com/articles/tonejs-coding-music-production-guide/
 const mainChords = [
+
+  // this was test code I used for trying to test black keys
+  // I kept it in case it's useful later, but if there's a merge conflict or something
+  // it's not the end of the world if it gets deleted
+  // ['C#3, F#3, 'Bb3']
+  // {'time': '0:0', 'note': ['C#3', 'D#3', 'F#3', 'G#3', 'Bb3'], 'duration': '1m'}
   {'time': '0:0', 'note': chords.chord1, 'duration': '1m'},
   {'time': '1:0', 'note': chords.chord2, 'duration': '1m'},
   {'time': '2:0', 'note': chords.chord3, 'duration': '1m'},

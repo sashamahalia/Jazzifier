@@ -18,8 +18,11 @@ export default {
   computed: {
     computedClass(){
       let result = "";
+      // console.log("APRICOT***********************", this.note)
+      // console.log("RUTABAGA***********************", this.pressed[0])
       if (this.pressed && this.pressed.has(this.note)) {result += 'key-'+this.keycolor}
       return result;
+      
     }
   }
 }
