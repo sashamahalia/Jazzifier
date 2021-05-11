@@ -5,9 +5,8 @@
     <ChordSelector />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->
-    <PlayButton />
-    <h2 id="chord-name"></h2>
-    <Dropdown :positions="positions"></Dropdown>
+    <PlayButton :chord="chord" :beat="beat"/>
+    <Dropdown :positions="positions" :beat="beat" :chords="chords"/>
   </div>
 </template>
 
@@ -18,6 +17,8 @@ import NavComponent from './components/NavComponent.vue'
 import Piano from './components/Piano.vue'
 import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
+import { chordState } from './helpers/loop'
+
 
 export default {
   name: 'App',
@@ -36,11 +37,19 @@ export default {
         { beat: 2, chord: 'Chord 2' },
         { beat: 3, chord: 'Chord 3' },
         { beat: 4, chord: 'Chord 4' },
-      ]
+      ],
+      chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
+      beat: this.currentBeat,
+      chord: this.currentChord
     }
   },
   computed: {
-    
+    currentBeat() {
+      return chordState.beat
+    },
+    currentChord() {
+      return chordState.chord
+    }
   }
 }
 </script>

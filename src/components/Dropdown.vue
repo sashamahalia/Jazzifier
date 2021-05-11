@@ -2,7 +2,7 @@
   <section id="chord-select">
     <div v-for="position in positions" :key="position.beat" class="position.beat">
       <h4>{{ position.chord }}</h4>
-      <v-select 
+      <v-select
         :options="chords"
         placeholder="Select chord"
         :value="position.chord"
@@ -20,22 +20,22 @@ export default {
   name: 'Dropdown',
   data() {
     return {
-      chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
     }
   },
-  props: ['positions'],
+  props: ['positions', 'beat', 'chords'],
   components: {
     vSelect
   },
   methods: {
-  updateChord (position, newChord) {
-    if (!newChord) {
-      console.log('hi');
-      return position.chord = `Chord ${position.beat}`;
+    updateChord (position, newChord) {
+      console.log(this.positions);
+      console.log(this.beat);
+      console.log(this.chords)
+      if (!newChord) {
+        return position.chord = `Chord ${position.beat}`;
+      }
+      position.chord = newChord;
     }
-    position.chord = newChord;
-    console.log(position.chord);
-  },
   },
   computed: {
     options: () => this.chords
