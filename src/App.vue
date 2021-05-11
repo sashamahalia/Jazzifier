@@ -18,8 +18,7 @@ import PlayButton from './components/PlayButton.vue'
 import NavComponent from './components/NavComponent.vue'
 import Piano from './components/Piano.vue'
 import ChordSelector from './components/ChordSelector.vue'
-import Dropdown from './components/test-dropdown.vue'
-import Iterate from './components/iterate'
+import Dropdown from './components/Dropdown.vue'
 
 export default {
   name: 'App',
@@ -29,8 +28,7 @@ export default {
     NavComponent,
     Piano,
     ChordSelector,
-    Dropdown,
-    Iterate
+    Dropdown
   },
   data() {
     return {
