@@ -16,7 +16,7 @@ export default {
   padding: $accidental-width;
   height: $accidental-width * 2.5;
 
-  background-color: $darker-purple;
+  background-color: $darkest-purple;
   margin: 0 0 0 $accidental-width * -1;
   // clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
 }  

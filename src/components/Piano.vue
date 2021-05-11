@@ -1,6 +1,5 @@
 <template lang="">
   <div>   
-    <p>Piano goes here potato</p>
     <div class="keys">
       <LeftKey keycolor=red  pressed=true />
       <MiddleKey />
@@ -9,8 +8,9 @@
       <LeftKey offset=true keycolor=yellow pressed=true />
       <MiddleKey />
       <LeftKey offset=true keycolor=green pressed=true />
-      <LeftKey  />
-      <LeftKey  />    
+      <LeftKey   keycolor=blue pressed=true />
+      <LeftKey   keycolor=indigo pressed=true /> 
+      <LeftKey   keycolor=violet pressed=true />     
     </div>
   </div>
 </template>

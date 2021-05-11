@@ -1,6 +1,6 @@
 <template lang="">
   <div class="left-key"
-  :class="{'left-offset': offset, 'press-style': pressed}"  
+  :class=computedClass 
   
   >
     <span></span>
@@ -15,11 +15,23 @@ export default {
     'keycolor',
     'pressed'
   ],
-  
+  computed: {
+    computedClass(){
+      let result = "";
+      if (this.offset) {result += 'left-offset ';}
+      if (this.keycolor) {result += 'key-'+this.keycolor}
+      
+      return result;
+    }
+  }
+  // NEED TO TURN BACKGROUND COLORS.
+  // Needs to use prop keycolor, and needs to access a SASS global variable
+  // I need a way to connect those two
+  // Gonna come back to this
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" >
 .left-key {
   z-index: 1;
   padding: $accidental-width * 1.25;
@@ -36,7 +48,31 @@ export default {
 
 }
 
-.press-style {
-  background-color: orange;
+.key-red {
+  background-color: $key-red;
+}
+
+.key-orange {
+  background-color: $key-orange;
+}
+
+.key-yellow {
+  background-color: $key-yellow;
+}
+
+.key-green {
+  background-color: $key-green;
+}
+
+.key-blue {
+  background-color: $key-blue;
+}
+
+.key-indigo {
+  background-color: $key-indigo;
+}
+
+.key-violet {
+  background-color: $key-violet;
 }
 </style>
