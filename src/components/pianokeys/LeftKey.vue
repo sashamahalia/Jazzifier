@@ -8,6 +8,7 @@
 </template>
 
 <script>
+
 export default {
   name: 'LeftKey',
   props: [
@@ -19,6 +20,8 @@ export default {
     computedClass(){
       let result = "";
       if (this.offset) {result += 'left-offset ';}
+      //change the next line to this.pressed for functionality to work
+      //left to this.keycolor for easier bugtesting
       if (this.keycolor) {result += 'key-'+this.keycolor}
       
       return result;

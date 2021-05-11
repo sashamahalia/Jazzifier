@@ -1,16 +1,33 @@
 <template lang="">
   <div>   
+    <div>
+      <p>Debug time!</p>
+    </div>
     <div class="keys">
-      <LeftKey keycolor=red  pressed=true />
+      <LeftKey keycolor=red />
       <MiddleKey />
-      <LeftKey offset=true keycolor=orange pressed=true />
+      <LeftKey keycolor=orange offset=true />
       <MiddleKey />
-      <LeftKey offset=true keycolor=yellow pressed=true />
+      <LeftKey keycolor=yellow offset=true />
+      <LeftKey keycolor=green />
       <MiddleKey />
-      <LeftKey offset=true keycolor=green pressed=true />
-      <LeftKey   keycolor=blue pressed=true />
-      <LeftKey   keycolor=indigo pressed=true /> 
-      <LeftKey   keycolor=violet pressed=true />     
+      <LeftKey keycolor=blue offset=true />
+      <MiddleKey />
+      <LeftKey keycolor=indigo offset=true />
+      <MiddleKey />
+      <LeftKey keycolor=violet offset=true />
+      <LeftKey keycolor=red />
+      <MiddleKey />
+      <LeftKey keycolor=orange offset=true />
+      <MiddleKey />
+      <LeftKey keycolor=yellow offset=true />
+      <LeftKey keycolor=green />
+      <MiddleKey />
+      <LeftKey keycolor=blue offset=true />
+      <MiddleKey />
+      <LeftKey keycolor=indigo offset=true />
+      <MiddleKey />
+      <LeftKey keycolor=violet offset=true />
     </div>
   </div>
 </template>
