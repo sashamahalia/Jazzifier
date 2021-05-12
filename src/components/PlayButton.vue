@@ -10,7 +10,8 @@
 
 <script>
 import * as Tone from 'tone'
-import { chordLoop, chordState } from '../helpers/loop'
+import { chordState } from '../helpers/loop'
+// import { selectChordState } from '../helpers/chords'
 import { synth } from '../helpers/synth'
 import { bpm } from '../helpers/bpm'
 
@@ -23,6 +24,7 @@ import { bpm } from '../helpers/bpm'
       chord: this.currentChord
     };
   },
+  props: ['selectedChords', 'chordLoop'],
   computed: {
     currentChord() {
       return chordState.chord
@@ -35,7 +37,10 @@ import { bpm } from '../helpers/bpm'
     handleClick() {
       bpm(100);
       synth;
-      chordLoop;
+      this.chordLoop;
+      this.chordLoop.loopStart = 0;
+      this.chordLoop.loopEnd = "4m";
+      this.chordLoop.loop = true;
       this.switchPlay();
 
     },

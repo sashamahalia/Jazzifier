@@ -1,5 +1,5 @@
 import Vue from "vue";
-import * as Tone from 'tone';
+// import * as Tone from 'tone';
 import { synth } from './synth';
 import { selectChordState } from './chords';
 // import s11 from 'sharp11';
@@ -30,21 +30,21 @@ export const chordState = new Vue.observable(
   }
 );
 
-export const chordLoop = new Tone.Part((time, value) => {
-    //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
-    //conditionally renders chord name as state
-    for (const chord in selectChordState.chords) {
-      if (value.note === selectChordState.chords[chord]){
-        chordState.chord = selectChordState.chords[chord];
-        chordState.beat = chord;
-      }
-    }
+// export const chordLoop = new Tone.Part((time, value) => {
+//     //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
+//     //conditionally renders chord name as state
+//     for (const chord in selectChordState.chords) {
+//       if (value.note === selectChordState.chords[chord]){
+//         chordState.chord = selectChordState.chords[chord];
+//         chordState.beat = chord;
+//       }
+//     }
 
-    synth.triggerAttackRelease(value.note, value.duration, time);
-}, chordState.mainChords).start(0);
+//     synth.triggerAttackRelease(value.note, value.duration, time);
+// }, chordsArray).start(0)
 
-//tells a the pattern to loop for four measures
-chordLoop.loopStart = 0;
-chordLoop.loopEnd = "4m";
-chordLoop.loop = true;
+// //tells a the pattern to loop for four measures
+// chordLoop.loopStart = 0;
+// chordLoop.loopEnd = "4m";
+// chordLoop.loop = true;
  

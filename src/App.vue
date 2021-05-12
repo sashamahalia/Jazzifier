@@ -7,7 +7,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <div class="flexbox">
-      <PlayButton :chord="chord" :beat="beat"/>
+      <PlayButton :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
       <JazzifyButton />
     </div>
     <div class="dropdowns">
@@ -25,6 +25,8 @@ import Piano from './components/Piano.vue'
 import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
 import { chordState } from './helpers/loop'
+import * as Tone from 'tone'
+import { synth } from './helpers/synth'
 import { selectChords, selectChordState } from './helpers/chords'
 import JazzifyButton from './components/JazzifyButton'
 import Menu from './components/Menu.vue'
@@ -67,6 +69,20 @@ export default {
     currentChord() {
       return chordState.chord
     },
+    mapToChords(num) {
+
+      const valueMap = {
+        I: 'C',
+        II: 'Dm',
+        III: 'Em',
+        IV: 'F',
+        V: 'G',
+        VI: 'Am',
+        VII: 'Bdim',
+        default: 'C'
+      }
+      return (valueMap[num] || valueMap['default']);
+    },
     selectChords() {
       const chordArray = selectChords(this.positions).map(chord => s11.chord.create(chord, 3));
 
@@ -74,16 +90,25 @@ export default {
         return `${note.letter}${note.octave}`
       }));
     },
-    buildChordArray() {
-      // const chordNotes = this.selectChords();
-      const chordNotes = [['C3', 'E3', 'F3'], ['C3', 'E3', 'F3'], ['C3', 'E3', 'F3'], ['C3', 'E3', 'F3']];
-        selectChordState.chords.chord1 = chordNotes[0];
-        selectChordState.chords.chord2 = chordNotes[1];
-        selectChordState.chords.chord3 = chordNotes[2];
-        selectChordState.chords.chord3 = chordNotes[3];
-      return selectChordState;
+    chordLoop() {
+      return new Tone.Part((time, value) => {
 
-    }
+      //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
+      //conditionally renders chord name as state
+      for (const chord in selectChordState.chords) {
+        if (value.note === selectChordState.chords[chord]){
+          chordState.chord = selectChordState.chords[chord];
+          chordState.beat = chord;
+        }
+      }
+
+      synth.triggerAttackRelease(value.note, value.duration, time);
+    }, [
+      {'time': '0:0', 'note': this.selectChords[0], 'duration': '1m'},
+      {'time': '1:0', 'note': this.selectChords[1], 'duration': '1m'},
+      {'time': '2:0', 'note': this.selectChords[2], 'duration': '1m'},
+      {'time': '3:0', 'note': this.selectChords[3], 'duration': '1m'},
+    ]).start(0)}
   }
 }
 </script>
