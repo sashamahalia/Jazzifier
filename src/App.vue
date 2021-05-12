@@ -24,7 +24,7 @@ import NavComponent from './components/NavComponent.vue'
 import Piano from './components/Piano.vue'
 import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
-// import { chordState } from './helpers/loop'
+import { chordState } from './helpers/loop'
 import JazzifyButton from './components/JazzifyButton'
 import Menu from './components/Menu.vue'
 import MenuList from './components/MenuList.vue'
@@ -53,7 +53,17 @@ export default {
       chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
       keys: ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'],
       modes: ['Major', 'Minor'],
-      scale: {key: '', mode: ''}
+      scale: {key: '', mode: ''},
+      beat: this.currentBeat,
+      chord: this.currentChord
+    }
+  },
+  computed: {
+    currentBeat() {
+      return chordState.beat
+    },
+    currentChord() {
+      return chordState.chord
     }
   }
 }
