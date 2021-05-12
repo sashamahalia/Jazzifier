@@ -1,5 +1,5 @@
 <template>
-  <nav><span class="navlink">Jazzifier</span> <span class="navlink">Info</span></nav>
+  <nav><a href='/' class="navlink">Jazzifier</a> <a href='/about' class="navlink">Info</a></nav>
 </template>
 
 <script>
@@ -30,6 +30,8 @@ nav {
 .navlink {
   padding: .75em;
   /* background-color: cyan; */
+  color: white;
+  text-decoration: none;
   font-size: 1.5em;
 }  
 </style>
