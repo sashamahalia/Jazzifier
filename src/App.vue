@@ -2,7 +2,7 @@
   <div id="app">
     <NavComponent />
     <Menu name="Instrument" class="instrument"/>
-    <Piano :chord=currentChord />
+    <Piano :chord="chord" />
     <ChordSelector />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->
@@ -27,7 +27,7 @@ import Dropdown from './components/Dropdown.vue'
 import { chordState } from './helpers/loop'
 import * as Tone from 'tone'
 import { synth } from './helpers/synth'
-import { selectChords, selectChordState } from './helpers/chords'
+import { selectChords } from './helpers/chords'
 import JazzifyButton from './components/JazzifyButton'
 import Menu from './components/Menu.vue'
 import MenuList from './components/MenuList.vue'
@@ -91,24 +91,20 @@ export default {
       }));
     },
     chordLoop() {
-      return new Tone.Part((time, value) => {
+      const loop = new Tone.Part((time, value) => {
 
       //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
       //conditionally renders chord name as state
-      for (const chord in selectChordState.chords) {
-        if (value.note === selectChordState.chords[chord]){
-          chordState.chord = selectChordState.chords[chord];
-          chordState.beat = chord;
-        }
-      }
-
+          this.chord = value.note;
       synth.triggerAttackRelease(value.note, value.duration, time);
     }, [
       {'time': '0:0', 'note': this.selectChords[0], 'duration': '1m'},
       {'time': '1:0', 'note': this.selectChords[1], 'duration': '1m'},
       {'time': '2:0', 'note': this.selectChords[2], 'duration': '1m'},
       {'time': '3:0', 'note': this.selectChords[3], 'duration': '1m'},
-    ]).start(0)}
+    ]).start(0)
+    return loop;
+    }
   }
 }
 </script>
