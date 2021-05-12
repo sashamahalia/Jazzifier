@@ -1,13 +1,13 @@
 import Vue from "vue";
 import * as Tone from 'tone';
 import { synth } from './synth';
-import { chords } from './chords';
+import { selectChordState } from './chords';
 // import s11 from 'sharp11';
 
 //using synth and chords from helper functions
 synth;
-chords;
-console.log('chords', chords);
+selectChordState.chords;
+console.log('chords', selectChordState.chords);
 
   // this was test code I used for trying to test black keys
   // I kept it in case it's useful later, but if there's a merge conflict or something
@@ -22,10 +22,10 @@ export const chordState = new Vue.observable(
     chord: '',
     beat: '',
     mainChords: [
-      {'time': '0:0', 'note': chords.chord1, 'duration': '1m'},
-      {'time': '1:0', 'note': chords.chord2, 'duration': '1m'},
-      {'time': '2:0', 'note': chords.chord3, 'duration': '1m'},
-      {'time': '3:0', 'note': chords.chord4, 'duration': '1m'},
+      {'time': '0:0', 'note': selectChordState.chords.chord1, 'duration': '1m'},
+      {'time': '1:0', 'note': selectChordState.chords.chord2, 'duration': '1m'},
+      {'time': '2:0', 'note': selectChordState.chords.chord3, 'duration': '1m'},
+      {'time': '3:0', 'note': selectChordState.chords.chord4, 'duration': '1m'},
     ]
   }
 );
@@ -33,9 +33,9 @@ export const chordState = new Vue.observable(
 export const chordLoop = new Tone.Part((time, value) => {
     //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
     //conditionally renders chord name as state
-    for (const chord in chords) {
-      if (value.note === chords[chord]){
-        chordState.chord = chords[chord];
+    for (const chord in selectChordState.chords) {
+      if (value.note === selectChordState.chords[chord]){
+        chordState.chord = selectChordState.chords[chord];
         chordState.beat = chord;
       }
     }

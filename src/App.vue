@@ -11,7 +11,7 @@
       <JazzifyButton />
     </div>
     <div class="dropdowns">
-      <MenuList @passValue="console.log('hi')" :keys="keys" :modes="modes" :scale="scale"/>
+      <MenuList :keys="keys" :modes="modes" :scale="scale"/>
       <Dropdown :positions="positions" :chords="chords"/>
     </div>
   </div>
@@ -25,9 +25,11 @@ import Piano from './components/Piano.vue'
 import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
 import { chordState } from './helpers/loop'
+import { selectChords, selectChordState } from './helpers/chords'
 import JazzifyButton from './components/JazzifyButton'
 import Menu from './components/Menu.vue'
 import MenuList from './components/MenuList.vue'
+import s11 from 'sharp11';
 
 export default {
   name: 'App',
@@ -64,6 +66,23 @@ export default {
     },
     currentChord() {
       return chordState.chord
+    },
+    selectChords() {
+      const chordArray = selectChords(this.positions).map(chord => s11.chord.create(chord, 3));
+
+      return chordArray.map(chordInfo => chordInfo.chord.map(note => {
+        return `${note.letter}${note.octave}`
+      }));
+    },
+    buildChordArray() {
+      // const chordNotes = this.selectChords();
+      const chordNotes = [['C3', 'E3', 'F3'], ['C3', 'E3', 'F3'], ['C3', 'E3', 'F3'], ['C3', 'E3', 'F3']];
+        selectChordState.chords.chord1 = chordNotes[0];
+        selectChordState.chords.chord2 = chordNotes[1];
+        selectChordState.chords.chord3 = chordNotes[2];
+        selectChordState.chords.chord3 = chordNotes[3];
+      return selectChordState;
+
     }
   }
 }
