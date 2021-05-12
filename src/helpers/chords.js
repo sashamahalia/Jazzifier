@@ -1,4 +1,5 @@
 import s11 from 'sharp11';
+import Vue from 'vue'
 
 // const positions = [
 //   { beat: 1, chord: 'I' },
@@ -11,12 +12,12 @@ const mapToChords = num => {
 
   const valueMap = {
     I: 'C',
-    II: 'D',
-    III: 'E',
+    II: 'Dm',
+    III: 'Em',
     IV: 'F',
     V: 'G',
-    VI: 'A',
-    VII: 'B',
+    VI: 'Am',
+    VII: 'Bdim',
     default: 'C'
   }
  return (valueMap[num] || valueMap['default']);
@@ -25,19 +26,16 @@ const mapToChords = num => {
 // Needs more defensive code, could break if default value of chord ie 'Chord 1' rather than roman numeral was still selected.
 export const selectChords = positions => {
     return positions.map(position => {
-      const newPosition = {...position}
-      console.log('new position', newPosition);
-      position.chord = mapToChords(position.chord);
-      return position.chord;
+      const newPosition = {...position};
+      console.log(position)
+      newPosition.chord = mapToChords(position.chord);
+      console.log(newPosition.chord);
+      return newPosition.chord;
   })
 };
+export const selectChordState = new Vue.observable({ selectedChords: [] });
 
-export let selectedChords = [];
-console.log(selectedChords);
-
-
-const chordArray = selectedChords.map(chord => s11.chord.create(chord, 3));
-console.log(chordArray);
+const chordArray = selectChordState.selectedChords.map(chord => s11.chord.create(chord, 3));
 
 //chordArray is an array of Sharp 11 chord objects which have bunch of info
 //including the letter names of each note in the chord and it's octave which is what we're returning
