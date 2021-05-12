@@ -13,6 +13,7 @@ export default {
 
 <style lang="scss" >
 nav {
+  z-index: 3;
   width: 100%;
   color: white;
   position: fixed;
