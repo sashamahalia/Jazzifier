@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <NavComponent />
-    <Menu name="Instrument" class="instrument"/>
+    <Menu :options="[]" name="Instrument" class="instrument"/>
     <Piano :chord="chord" />
     <ChordSelector />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
@@ -26,7 +26,7 @@ import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
 import { chordState } from './helpers/loop'
 import * as Tone from 'tone'
-import { amSynth } from './helpers/synth'
+import { fmSynth } from './helpers/synth'
 import { selectChords } from './helpers/chords'
 import JazzifyButton from './components/JazzifyButton'
 import Menu from './components/Menu.vue'
@@ -59,7 +59,8 @@ export default {
       modes: ['Major', 'Minor'],
       scale: {key: '', mode: ''},
       beat: this.currentBeat,
-      chord: this.currentChord
+      chord: this.currentChord,
+      
     }
   },
   computed: {
@@ -96,7 +97,7 @@ export default {
       //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
       //conditionally renders chord name as state
           this.chord = value.note;
-      amSynth.triggerAttackRelease(value.note, value.duration, time);
+      fmSynth.triggerAttackRelease(value.note, value.duration, time);
     }, [
       {'time': '0:0', 'note': this.selectChords[0], 'duration': '1m'},
       {'time': '1:0', 'note': this.selectChords[1], 'duration': '1m'},
