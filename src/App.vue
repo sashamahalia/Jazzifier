@@ -81,8 +81,6 @@ export default {
   }
 
   #app {
-    
-
     @import url('https://fonts.googleapis.com/css2?family=Julee&family=PT+Sans&display=swap');
     font-family: 'Julee', cursive;
     /* font-family: 'PT Sans', sans-serif; */
