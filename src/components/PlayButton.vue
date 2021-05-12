@@ -12,7 +12,7 @@
 import * as Tone from 'tone'
 import { chordState } from '../helpers/loop'
 // import { selectChordState } from '../helpers/chords'
-import { synth } from '../helpers/synth'
+// import { fmSynth } from '../helpers/synth'
 import { bpm } from '../helpers/bpm'
 
   export default {
@@ -36,7 +36,6 @@ import { bpm } from '../helpers/bpm'
   methods: {
     handleClick() {
       bpm(100);
-      synth;
       this.chordLoop;
       this.chordLoop.loopStart = 0;
       this.chordLoop.loopEnd = "4m";
