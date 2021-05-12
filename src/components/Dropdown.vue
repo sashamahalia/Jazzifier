@@ -36,7 +36,7 @@ export default {
       }
       position.chord = newChord;
       this.chordNumToNote();
-      console.log('selected chords', selectChordState.selectedChords);
+      // console.log('selected chords', selectChordState.selectedChords);
     },
     chordNumToNote() {
       selectChordState.selectedChords.splice(0, 4, selectChords(this.positions));

@@ -20,9 +20,7 @@ const mapToChords = num => {
 export const selectChords = positions => {
     return positions.map(position => {
       const newPosition = {...position};
-      console.log(position)
       newPosition.chord = mapToChords(position.chord);
-      console.log(newPosition.chord);
       return newPosition.chord;
   })
 };

@@ -4,7 +4,8 @@ export let synth = new Tone.PolySynth(Tone.Synth, {
   oscillator : {
     type : "sawtooth",
     detune: 3,
-    portamento: 0.5
+    portamento: 0.5,
+    volume: -15
   }
 }).toDestination();
 

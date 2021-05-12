@@ -7,8 +7,6 @@ import { selectChordState } from './chords';
 //using synth and chords from helper functions
 synth;
 selectChordState.chords;
-console.log('chords', selectChordState.chords);
-
   // this was test code I used for trying to test black keys
   // I kept it in case it's useful later, but if there's a merge conflict or something
   // it's not the end of the world if it gets deleted

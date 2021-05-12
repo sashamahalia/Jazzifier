@@ -1,7 +1,10 @@
 <template>
   <div id="app">
     <NavComponent />
-    <Menu :options="[]" name="Instrument" class="instrument"/>
+    <div class="synth-menu">
+      <h4>Synth type</h4>
+      <v-select :options="synthTones" v-model="synthTone" name="Instrument" class="instrument"/>
+    </div>
     <Piano :chord="chord" />
     <ChordSelector />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
@@ -24,12 +27,12 @@ import NavComponent from './components/NavComponent.vue'
 import Piano from './components/Piano.vue'
 import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
+import vSelect from 'vue-select'
 import { chordState } from './helpers/loop'
 import * as Tone from 'tone'
-import { fmSynth } from './helpers/synth'
+import { synth, fmSynth, amSynth } from './helpers/synth'
 import { selectChords } from './helpers/chords'
 import JazzifyButton from './components/JazzifyButton'
-import Menu from './components/Menu.vue'
 import MenuList from './components/MenuList.vue'
 import s11 from 'sharp11';
 
@@ -43,7 +46,7 @@ export default {
     ChordSelector,
     Dropdown,
     JazzifyButton,
-    Menu,
+    vSelect,
     MenuList
   },
   data() {
@@ -60,7 +63,8 @@ export default {
       scale: {key: '', mode: ''},
       beat: this.currentBeat,
       chord: this.currentChord,
-      
+      synthTones: ['basic synth', 'metallic', 'dark'],
+      synthTone: 'basic synth'
     }
   },
   computed: {
@@ -92,12 +96,24 @@ export default {
       }));
     },
     chordLoop() {
+      let synthTone = ''
+
+      if (this.synthTone === 'basic synth') {
+        synthTone = synth;
+      } else if (this.synthTone === 'metallic') {
+        synthTone = fmSynth;
+      } else if (this.synthTone === 'dark') {
+        synthTone = amSynth;
+      }
+
+      console.log('synth tone', synthTone)
+
       const loop = new Tone.Part((time, value) => {
 
       //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
       //conditionally renders chord name as state
           this.chord = value.note;
-      fmSynth.triggerAttackRelease(value.note, value.duration, time);
+      synthTone.triggerAttackRelease(value.note, value.duration, time);
     }, [
       {'time': '0:0', 'note': this.selectChords[0], 'duration': '1m'},
       {'time': '1:0', 'note': this.selectChords[1], 'duration': '1m'},
@@ -152,6 +168,14 @@ export default {
   }
 
   .instrument {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .synth-menu {
+    margin-right: 21em;
+    margin-bottom: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
