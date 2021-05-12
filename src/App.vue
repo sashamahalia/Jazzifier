@@ -11,7 +11,7 @@
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <div class="flexbox">
       <PlayButton :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
-      <JazzifyButton />
+      <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
     </div>
     <div class="dropdowns">
       <MenuList :keys="keys" :modes="modes" :scale="scale"/>
@@ -21,19 +21,22 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+//vue stuff
+import vSelect from 'vue-select'
+//components
 import PlayButton from './components/PlayButton.vue'
 import NavComponent from './components/NavComponent.vue'
 import Piano from './components/Piano.vue'
 import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
-import vSelect from 'vue-select'
-import { chordState } from './helpers/loop'
-import * as Tone from 'tone'
-import { synth, fmSynth, amSynth } from './helpers/synth'
-import { selectChords } from './helpers/chords'
 import JazzifyButton from './components/JazzifyButton'
 import MenuList from './components/MenuList.vue'
+//helpers
+import { chordState } from './helpers/loop'
+import { synth, fmSynth, amSynth } from './helpers/synth'
+import { selectChords } from './helpers/chords'
+//libraries
+import * as Tone from 'tone'
 import s11 from 'sharp11';
 
 export default {
@@ -121,6 +124,12 @@ export default {
       {'time': '3:0', 'note': this.selectChords[3], 'duration': '1m'},
     ]).start(0)
     return loop;
+    }
+  },
+
+  methods: {
+    onJazzifyChildClick() {
+      console.log("fully jazzified")
     }
   }
 }

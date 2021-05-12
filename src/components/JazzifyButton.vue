@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button id="jazzify" @click="handleClick" >
+    <button id="jazzify" @click="onClickJazzify" >
       ***Jazzify***
     </button>
   </div>
@@ -9,25 +9,16 @@
 
 <script>
 export default {
-//@click="handleClick"
 name: 'JazzifyButton',
-  //where state lives
-  data() {
-    return {
-      play: 'Play',
-      chord: this.currentChord
-    };
-  },
-  props: [],
-  computed: {},
   methods: {
-    handleClick() {
-      console.log("potato")
-
+    onClickJazzify() {
+      // console.log("jazzify clicked")
+      this.$emit('jazzifyClicked')
     }
   }
 }
 </script>
-<style lang="">
-  
+
+
+<style lang="">  
 </style>
