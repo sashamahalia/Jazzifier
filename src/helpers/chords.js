@@ -1,13 +1,6 @@
 import s11 from 'sharp11';
 import Vue from 'vue'
 
-// const positions = [
-//   { beat: 1, chord: 'I' },
-//   { beat: 2, chord: 'VI' },
-//   { beat: 3, chord: 'IV' },
-//   { beat: 4, chord: 'VII' },
-// ];
-
 const mapToChords = num => {
 
   const valueMap = {
@@ -33,7 +26,7 @@ export const selectChords = positions => {
       return newPosition.chord;
   })
 };
-export const selectChordState = new Vue.observable({ selectedChords: [] });
+export const selectChordState = new Vue.observable({ selectedChords: ['C', "Am", 'Gm', 'Dm'] });
 
 const chordArray = selectChordState.selectedChords.map(chord => s11.chord.create(chord, 3));
 
