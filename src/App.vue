@@ -5,7 +5,7 @@
       <h4>Synth type</h4>
       <v-select :options="synthTones" v-model="synthTone" name="Instrument" class="instrument"/>
     </div>
-    <Piano :chord="chord" />
+    <Piano :chord=chord />
     <ChordSelector />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->
