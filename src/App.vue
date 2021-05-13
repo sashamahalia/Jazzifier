@@ -111,6 +111,16 @@ export default {
       {'time': '3:0', 'note': this.convertNotes(this.selectChords[3]), 'duration': '1m'},
     ]).start(0)
     return loop;
+    },
+    disablePlay() {
+      let result = true;
+      for (const position of this.positions) {
+        if (!this.chords.find(position.chord)) {
+          result = false;
+        }
+      }
+      console.log(result);
+      return result;
     }
   },
 
