@@ -33,7 +33,7 @@ export default {
       this.chordLoop.dispose();
       if (!newChord) {
         position.chord = `Chord ${position.beat}`;
-        this.chordNumToNote()
+        this.chordNumToNote();
         return;
       }
       position.chord = newChord;

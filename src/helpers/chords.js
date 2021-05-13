@@ -26,7 +26,7 @@ export const selectChords = positions => {
 };
 
 export const selectChordState = new Vue.observable({
-  selectedChords: ['Gm7', 'Ab', 'Bdim', 'F'],
+  selectedChords: [],
   chords: {
     chord1: '',
     chord2: '',
