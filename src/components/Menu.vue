@@ -1,7 +1,7 @@
 <template>
   <div :class="name">
     <h5>{{ name }}</h5>
-    <v-select :options="options" v-model="scale[type]"/>
+    <v-select :options="options" :placeholder="scale[type]" :value="scale[type]" v-model="scale[type]"/>
   </div>
 </template>
 

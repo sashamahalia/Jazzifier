@@ -9,6 +9,7 @@
         @input="chord => updateChord(position, chord)"
         >
         </v-select>
+        <Menu :scale="scale" :options="modes" type="mode" name="Mode" />
       </div>
   </section>
 </template>
@@ -16,15 +17,17 @@
 <script>
 import vSelect from 'vue-select';
 import 'vue-select/dist/vue-select.css';
+import Menu from './Menu'
 export default {
   name: 'Dropdown',
   data() {
     return {
     }
   },
-  props: ['positions', 'chords', 'chordLoop'],
+  props: ['positions', 'chords', 'chordLoop', 'modes', 'scale'],
   components: {
-    vSelect
+    vSelect,
+    Menu
   },
   methods: {
     updateChord (position, newChord) {

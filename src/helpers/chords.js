@@ -1,4 +1,41 @@
-const mapToChords = num => {
+// import { Scale } from "tonal";
+
+// const root = 'C'
+// const mode = 'Minor'
+
+// const positions = [
+//   { beat: 1, chord: 'VI' },
+//   { beat: 2, chord: 'IV' },
+//   { beat: 3, chord: 'V' },
+//   { beat: 4, chord: 'I' },
+// ];
+
+// const mapToChords =  (numeral, root, mode) => {
+//   const notes = Scale.notes(`${root} ${mode.toLowerCase()}`)
+
+//   let circleOfFifths = [];
+
+//   if (mode === 'Major') {
+//     circleOfFifths = ['M', 'm', 'm', 'M', 'M', 'm', 'dim'];
+//   }
+//   if (mode === 'Minor') {
+//     circleOfFifths = ['m', 'dim', 'M', 'm', 'm', 'M', 'M'];
+//   }
+
+//   const valueMap = {
+//     I: ``,
+//     II: ``,
+//     III: ``,
+//     IV: ``,
+//     V: ``,
+//     VI: ``,
+//     VII: `$`,
+//     default: ``,
+//   }
+//   return (valueMap[numeral] || valueMap['default']);
+// }
+
+export const mapToChords = num => {
 
   const valueMap = {
     I: 'C',
