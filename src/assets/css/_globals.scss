@@ -16,3 +16,21 @@ $key-violet: #e078ff;
 
 /*width of an accidental key (aka black key on a piano) */
 $accidental-width: .75em;
+
+/*buttons*/
+button {
+  padding: .75em;
+  background-color: $darker-purple;
+  color: white; 
+  border-radius: 1em;
+  border: none; 
+}
+
+button:hover {
+  background-color: white;
+  color: $darker-purple;
+}
+
+body {
+  background-color: $medium-purple;
+}

@@ -146,7 +146,9 @@ export default {
 }
 </script>
 
-<style lang="scss">  
+<style lang="scss" scoped>  
+
+  /* button styles are in globals.scss */
 
 
   #app {
@@ -170,20 +172,8 @@ export default {
     margin: 2em;
   }
 
-  button {
-    padding: .75em;
-    background-color: $darker-purple;
-    color: white; 
-    border-radius: 1em;
-    border: none; 
-  }
-
-  button:hover {
-    background-color: white;
-    color: $darker-purple;
-  }
-
   .dropdowns {
+    font-size: .75em;
     display: flex;
     align-self: flex-end;
     justify-content: center;

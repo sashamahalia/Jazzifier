@@ -19,9 +19,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  /* 
-  font-family: "Oswald", sans-serif;
-  */
+  font-family: 'Julee', cursive;
   background-color: $darker-purple;
   display: flex;
   justify-content: space-between;
