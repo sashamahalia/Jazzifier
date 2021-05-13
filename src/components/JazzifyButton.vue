@@ -12,6 +12,7 @@ export default {
 name: 'JazzifyButton',
   methods: {
     onClickJazzify() {
+      
       // console.log("jazzify clicked")
       this.$emit('jazzifyClicked')
     }
