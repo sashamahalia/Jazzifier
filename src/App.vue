@@ -3,20 +3,20 @@
     <NavComponent />
     <div class="synth-menu">
       <h4>Synth type</h4>
-      <v-select :options="synthTones" v-model="synthTone" name="Instrument" class="instrument"/>
+      <v-select :disabled="disabled" :options="synthTones" v-model="synthTone" name="Instrument" class="instrument"/>
     </div>
     <Piano :chord=chord />
     <ChordSelector />
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <div class="flexbox">
-      <PlayButton :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
+      <PlayButton @stop="console.log('stop')" @play="console.log('play')" :disabled="disabled" :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
       <ButtonPickChords @pickChordsClicked="onPickChordsChildClick" />
       <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
     </div>
     <div class="dropdowns">
-      <MenuList :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
-      <Dropdown :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
+      <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
+      <Dropdown :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
     </div>
   </div>
 </template>
@@ -69,7 +69,8 @@ export default {
       beat: this.currentBeat,
       chord: this.currentChord,
       synthTones: ['basic synth', 'metallic', 'dark'],
-      synthTone: 'basic synth'
+      synthTone: 'basic synth',
+      disabled: true
     }
   },
   computed: {

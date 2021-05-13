@@ -1,7 +1,7 @@
 <template>
   <div :class="name">
     <h5>{{ name }}</h5>
-    <v-select :options="options" @input="chordLoop.dispose()" :placeholder="scale[type]" :value="scale[type]" v-model="scale[type]"/>
+    <v-select :disabled="disabled" :options="options" @input="chordLoop.dispose()" :placeholder="scale[type]" :value="scale[type]" v-model="scale[type]"/>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
   import 'vue-select/dist/vue-select.css';
   export default {
     name: 'Menu',
-    props: [ 'name', 'options', 'scale', 'type', 'chordLoop' ],
+    props: [ 'name', 'options', 'scale', 'type', 'chordLoop', 'disabled' ],
       components: {
       vSelect
     }

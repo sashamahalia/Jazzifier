@@ -3,13 +3,14 @@
     <div v-for="position in positions" :key="position.beat" class="position.beat">
       <h4>{{ position.chord }}</h4>
       <v-select
+        :disabled="disabled"
         :options="chords"
         placeholder="Select chord"
         :value="position.chord"
         @input="chord => updateChord(position, chord)"
         >
         </v-select>
-        <v-select @input="chordLoop.dispose()" :options="modes" :placeholder="position.mode" :value="position.mode" v-model="position.mode"/>
+        <v-select :disabled="disabled" @input="chordLoop.dispose()" :options="modes" :placeholder="position.mode" :value="position.mode" v-model="position.mode"/>
       </div>
   </section>
 </template>
@@ -23,7 +24,7 @@ export default {
     return {
     }
   },
-  props: ['positions', 'chords', 'chordLoop', 'modes', 'scale'],
+  props: ['positions', 'chords', 'chordLoop', 'modes', 'scale', 'disabled'],
   components: {
     vSelect
   },

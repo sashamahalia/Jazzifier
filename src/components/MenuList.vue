@@ -1,7 +1,7 @@
 <template>
   <section class="menus">
-    <Menu :chord-loop="chordLoop" :scale="scale" :options="keys" type="key" name="Key" />
-    <Menu :chord-loop="chordLoop" :scale="scale" :options="modes" type="mode" name="Mode" />
+    <Menu :disabled="disabled" :chord-loop="chordLoop" :scale="scale" :options="keys" type="key" name="Key" />
+    <Menu :disabled="disabled" :chord-loop="chordLoop" :scale="scale" :options="modes" type="mode" name="Mode" />
   </section>
 </template>
 
@@ -12,7 +12,7 @@ export default {
   components: {
     Menu
   },
-  props: ['keys', 'modes', 'scale', 'chordLoop'],
+  props: ['keys', 'modes', 'scale', 'chordLoop', 'disabled'],
   watch: {
     passValue() {
       this.$emit('v-select', this.select)
