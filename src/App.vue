@@ -11,6 +11,7 @@
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <div class="flexbox">
       <PlayButton :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
+      <ButtonPickChords @pickChordsClicked="onPickChordsChildClick" />
       <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
     </div>
     <div class="dropdowns">
@@ -31,6 +32,7 @@ import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
 import JazzifyButton from './components/JazzifyButton'
 import MenuList from './components/MenuList.vue'
+import ButtonPickChords from './components/ButtonPickChords'
 //helpers
 import { synth, fmSynth, amSynth } from './helpers/synth'
 import { selectChords } from './helpers/chords'
@@ -42,6 +44,7 @@ export default {
   name: 'App',
   components: {
     // HelloWorld,
+    ButtonPickChords,
     PlayButton,
     NavComponent,
     Piano,
@@ -108,12 +111,31 @@ export default {
   },
 
   methods: {
+    randomChord() {
+      const min = Math.ceil(0);
+      const max = Math.floor(this.chords.length);
+      const randomNumber = Math.floor(Math.random() * (max - min) + min);
+      
+      return this.chords[randomNumber];
+      // return this.chords.length;
+      // return "chordchanged";
+    },
+
     onJazzifyChildClick() {
-      console.log("fully jazzified")
+      // console.log("fully jazzified")
       this.chordLoop.dispose()
       for (let position of this.positions) {
         // console.log(position.chord);
         position.chord="II"
+      }
+    },
+
+    onPickChordsChildClick() {
+      // console.log("fully picked chords")
+      this.chordLoop.dispose()
+      for (let position of this.positions) {
+        // console.log(position.chord);
+        position.chord=this.randomChord()
       }
     }
   }
