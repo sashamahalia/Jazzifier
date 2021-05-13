@@ -177,6 +177,9 @@ export default {
     display: flex;
     align-self: flex-end;
     justify-content: center;
+    
+    padding-bottom: 3em;
+  
 
   }
 

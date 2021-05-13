@@ -28,6 +28,7 @@ export default {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
+  
 }
 
 </style>

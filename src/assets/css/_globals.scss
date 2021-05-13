@@ -15,7 +15,7 @@ $key-indigo: #9578ff;
 $key-violet: #e078ff;
 
 /*width of an accidental key (aka black key on a piano) */
-$accidental-width: .75em;
+$accidental-width: .5em;
 
 /*buttons*/
 button {
@@ -33,4 +33,8 @@ button:hover {
 
 body {
   background-color: $medium-purple;
+}
+
+@media only screen and (max-width: 600px) {
+  $accidental-width: .5em;
 }
