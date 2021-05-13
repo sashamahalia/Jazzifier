@@ -130,6 +130,7 @@ export default {
   methods: {
     onJazzifyChildClick() {
       console.log("fully jazzified")
+      this.chordLoop.dispose()
       for (let position of this.positions) {
         // console.log(position.chord);
         position.chord="II"
