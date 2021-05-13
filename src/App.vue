@@ -15,7 +15,7 @@
       <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
     </div>
     <div class="dropdowns">
-      <MenuList :keys="keys" :scale="scale"/>
+      <MenuList :keys="keys" :modes="modes" :scale="scale"/>
       <Dropdown :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
     </div>
   </div>
@@ -57,10 +57,10 @@ export default {
   data() {
     return {
       positions: [
-        { beat: 1, chord: 'Chord 1', mode: 'M' },
-        { beat: 2, chord: 'Chord 2', mode: 'M' },
-        { beat: 3, chord: 'Chord 3', mode: 'M' },
-        { beat: 4, chord: 'Chord 4', mode: 'M' },
+        { beat: 1, chord: 'Chord 1', mode: 'Major' },
+        { beat: 2, chord: 'Chord 2', mode: 'Major' },
+        { beat: 3, chord: 'Chord 3', mode: 'Major' },
+        { beat: 4, chord: 'Chord 4', mode: 'Major' },
       ],
       chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
       keys: ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'],

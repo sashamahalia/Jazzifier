@@ -50,6 +50,32 @@ export const mapToChords = num => {
  return (valueMap[num] || valueMap['default']);
 };
 
+// export const mapToChords = (position, key) => {
+
+//   const notes = Scale.notes(`${root} minor`)
+
+
+//   let majOrMin = ''
+//   if (position.mode = 'Major') {
+//     majOrMin = 'M';
+//   }
+//   if (position.mode = 'Minor') {
+//     majOrMin = 'm';
+//   }
+
+//   const valueMap = {
+//     I: 'C',
+//     II: 'Dm',
+//     III: 'Em',
+//     IV: 'F',
+//     V: 'G',
+//     VI: 'Am',
+//     VII: 'Bdim',
+//     default: 'C'
+//   }
+//  return (valueMap[num] || valueMap['default']);
+
+
 // Needs more defensive code, could break if default value of chord ie 'Chord 1' rather than roman numeral was still selected.
 export const selectChords = positions => {
     return positions.map(position => {

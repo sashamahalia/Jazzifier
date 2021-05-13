@@ -1,6 +1,7 @@
 <template>
   <section class="menus">
     <Menu :scale="scale" :options="keys" type="key" name="Key" />
+    <Menu :scale="scale" :options="modes" type="mode" name="Mode" />
   </section>
 </template>
 
