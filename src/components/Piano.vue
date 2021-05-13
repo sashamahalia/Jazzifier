@@ -29,7 +29,6 @@
   </div>
 </template>
 <script>
-// import {  chordState } from '../helpers/loop'
 import LeftKey from './pianokeys/LeftKey';
 import MiddleKey from './pianokeys/MiddleKey';
 export default {
@@ -51,7 +50,6 @@ export default {
     }
   }
 }
-// console.log("KUMQUAT********************", chordState);
 // console.log("POTATO*******************", props[0]);
 </script>
 <style lang="scss">

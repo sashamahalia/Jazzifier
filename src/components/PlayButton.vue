@@ -10,9 +10,6 @@
 
 <script>
 import * as Tone from 'tone'
-import { chordState } from '../helpers/loop'
-// import { selectChordState } from '../helpers/chords'
-// import { fmSynth } from '../helpers/synth'
 import { bpm } from '../helpers/bpm'
 
   export default {
@@ -20,19 +17,10 @@ import { bpm } from '../helpers/bpm'
   //where state lives
   data() {
     return {
-      play: 'Play',
-      chord: this.currentChord
+      play: 'Play'
     };
   },
   props: ['selectedChords', 'chordLoop'],
-  computed: {
-    currentChord() {
-      return chordState.chord
-    },
-    currentBeat() {
-      return chordState.beat
-    }
-  },
   methods: {
     handleClick() {
       bpm(100);

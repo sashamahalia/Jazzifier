@@ -1,6 +1,3 @@
-// import s11 from 'sharp11';
-import Vue from 'vue'
-
 const mapToChords = num => {
 
   const valueMap = {
@@ -24,21 +21,3 @@ export const selectChords = positions => {
       return newPosition.chord;
   })
 };
-
-export const selectChordState = new Vue.observable({
-  selectedChords: [],
-  chords: {
-    chord1: '',
-    chord2: '',
-    chord3: '',
-    chord4: ''
-  } 
-});
-
-// const chordArray = selectChordState.selectedChords.map(chord => s11.chord.create(chord, 3));
-
-//chordArray is an array of Sharp 11 chord objects which have bunch of info
-//including the letter names of each note in the chord and it's octave which is what we're returning
-// const chordNotes = chordArray.map(chordInfo => chordInfo.chord.map(note => {
-//   return `${note.letter}${note.octave}`
-// }));
