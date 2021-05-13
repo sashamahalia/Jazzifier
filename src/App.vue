@@ -10,7 +10,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <div class="flexbox">
-      <PlayButton @change="console.log('stop')" :disabled="disabled" :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
+      <PlayButton @change="onPlayButtonClick" :disabled="disabled" :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
       <ButtonPickChords @pickChordsClicked="onPickChordsChildClick" />
       <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
     </div>
@@ -70,7 +70,7 @@ export default {
       chord: this.currentChord,
       synthTones: ['basic synth', 'metallic', 'dark'],
       synthTone: 'basic synth',
-      disabled: true
+      disabled: false
     }
   },
   computed: {
@@ -136,6 +136,12 @@ export default {
         // console.log(position.chord);
         position.chord=this.randomChord()
       }
+    },
+    onPlayButtonClick() {
+      if (!this.disabled) {
+        return this.disabled = true;
+      }
+      return this.disabled = false;
     }
   }
 }
