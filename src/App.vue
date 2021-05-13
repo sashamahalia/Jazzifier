@@ -32,7 +32,6 @@ import Dropdown from './components/Dropdown.vue'
 import JazzifyButton from './components/JazzifyButton'
 import MenuList from './components/MenuList.vue'
 //helpers
-import { chordState } from './helpers/loop'
 import { synth, fmSynth, amSynth } from './helpers/synth'
 import { selectChords } from './helpers/chords'
 //libraries
@@ -71,26 +70,7 @@ export default {
     }
   },
   computed: {
-    currentBeat() {
-      return chordState.beat
-    },
-    currentChord() {
-      return chordState.chord
-    },
-    mapToChords(num) {
 
-      const valueMap = {
-        I: 'C',
-        II: 'Dm',
-        III: 'Em',
-        IV: 'F',
-        V: 'G',
-        VI: 'Am',
-        VII: 'Bdim',
-        default: 'C'
-      }
-      return (valueMap[num] || valueMap['default']);
-    },
     selectChords() {
       const chordArray = selectChords(this.positions).map(chord => s11.chord.create(chord, 3));
 
