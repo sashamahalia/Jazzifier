@@ -76,9 +76,9 @@ export default {
 
     selectChords() {
       const chordArray = selectChords(this.positions, this.scale.key, this.scale.mode).map(chord => s11.chord.create(chord, 3));
-      // console.log("POTATO****************", chordArray[0]["root"]["name"])
       return chordArray.map(chordInfo => chordInfo.chord.map(note => {
-        return `${note.letter}${note.octave}`
+        return `${note.name}${note.octave}`
+
       }));
     },
     chordLoop() {
