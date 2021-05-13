@@ -30,7 +30,7 @@ export const mapToChords = (position, root, mode) => {
     VII: `${notes[6]}${majOrMin}`,
     default: `${notes[0]}${keyMode}`,
   }
-  console.log(valueMap[position.chord]);
+  // console.log(valueMap[position.chord]);
  return (valueMap[position.chord] || valueMap['default']);
 };
 
