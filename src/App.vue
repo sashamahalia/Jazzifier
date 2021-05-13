@@ -65,7 +65,7 @@ export default {
       chords: ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'],
       keys: ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'],
       modes: ['Major', 'Minor'],
-      scale: {key: '', mode: ''},
+      scale: {key: 'C', mode: 'Major'},
       beat: this.currentBeat,
       chord: this.currentChord,
       synthTones: ['basic synth', 'metallic', 'dark'],
@@ -75,7 +75,7 @@ export default {
   computed: {
 
     selectChords() {
-      const chordArray = selectChords(this.positions).map(chord => s11.chord.create(chord, 3));
+      const chordArray = selectChords(this.positions, this.scale.key, this.scale.mode).map(chord => s11.chord.create(chord, 3));
 
       return chordArray.map(chordInfo => chordInfo.chord.map(note => {
         return `${note.letter}${note.octave}`
