@@ -1,14 +1,14 @@
 import { Scale } from "tonal";
 
-const root = 'C'
-const mode = 'Minor'
+// const root = 'C'
+// const mode = 'Minor'
 
-const positions = [
-  { beat: 1, chord: 'VI' },
-  { beat: 2, chord: 'IV' },
-  { beat: 3, chord: 'V' },
-  { beat: 4, chord: 'I' },
-];
+// const positions = [
+//   { beat: 1, chord: 'VI' },
+//   { beat: 2, chord: 'IV' },
+//   { beat: 3, chord: 'V' },
+//   { beat: 4, chord: 'I' },
+// ];
 
 // const mapToChords =  (numeral, root, mode) => {
 //   const notes = Scale.notes(`${root} ${mode.toLowerCase()}`)
@@ -62,6 +62,8 @@ export const mapToChords = (position, root, mode) => {
     keyMode = 'm';
   }
 
+  console.log(keyMode);
+
 
   let majOrMin = ''
   if (position.mode === 'Major') {
@@ -92,5 +94,3 @@ export const selectChords = (positions, key, mode) => {
       return newPosition.chord;
   })
 };
-
-console.log(selectChords(positions, root, mode));
