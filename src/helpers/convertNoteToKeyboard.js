@@ -2,10 +2,13 @@ export const convertNoteToKeyboard = (note) => {
   // console.log("helper function note", note)
   let newNote = note.slice(0, -1);
   let octave = note.slice(-1)
-  console.log("***POTATO***", newNote, " SPACE ", octave);
+  // console.log("***POTATO***", newNote, " SPACE ", octave);
   switch(newNote){
     //C
     case 'B#':
+      newNote = 'C';
+      octave = parseInt(octave) + 1;
+      break;
     case 'Dbb':
       newNote = 'C';
       break;
