@@ -9,7 +9,7 @@
         @input="chord => updateChord(position, chord)"
         >
         </v-select>
-        <v-select :options="modes" :placeholder="position.mode" :value="position.mode" v-model="position.mode"/>
+        <v-select @input="chordLoop.dispose()" :options="modes" :placeholder="position.mode" :value="position.mode" v-model="position.mode"/>
       </div>
   </section>
 </template>

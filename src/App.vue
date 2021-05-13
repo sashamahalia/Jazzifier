@@ -15,7 +15,7 @@
       <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
     </div>
     <div class="dropdowns">
-      <MenuList :keys="keys" :modes="modes" :scale="scale"/>
+      <MenuList :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
       <Dropdown :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
     </div>
   </div>
@@ -105,8 +105,6 @@ export default {
       {'time': '3:0', 'note': this.selectChords[3], 'duration': '1m'},
     ]).start(0)
     return loop;
-    },
-    watch: {
     }
   },
 
