@@ -29,8 +29,12 @@
   </div>
 </template>
 <script>
+//components
 import LeftKey from './pianokeys/LeftKey';
 import MiddleKey from './pianokeys/MiddleKey';
+//helpers
+import { convertNoteToKeyboard } from '../helpers/convertNoteToKeyboard'
+
 export default {
   name: 'Piano',
   props: 
@@ -44,11 +48,32 @@ export default {
   computed: {
     currentPressedKeys() {
       // return new Set(['C#3', 'D#3', 'F#3', 'G#3', 'A#3', 'C#4', 'D#4', 'F#4', 'G#4', 'A#4']);
-      return new Set(this.chord);
+      // console.log(this.chord);
+      
+      
+      if (this.chord) {
+        let convertedChord = this.chord.map(note => {return convertNoteToKeyboard(note)})
+        return new Set(convertedChord);
+
+      }
+
+      // console.log(typeof convertNoteToKeyboard(1));
+      // let emptyVar = convertNoteToKeyboard(1);
+      // emptyVar = 1;
+
+      // if (this.chord !== 'potato') {
+        return new Set(this.chord);
+      // }
+      // return emptyVar;
       //could also be array.includes if I do a loop
 
     }
-  }
+  },
+  // methods: {
+  //   convertNoteToKeyboard(note) {
+  //     return note;
+  //   }
+  // }
 }
 // console.log("POTATO*******************", props[0]);
 </script>
