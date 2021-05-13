@@ -23,15 +23,17 @@ export default {
     return {
     }
   },
-  props: ['positions', 'chords'],
+  props: ['positions', 'chords', 'chordLoop'],
   components: {
     vSelect
   },
   methods: {
     updateChord (position, newChord) {
+      // Dispose the chord loop before every time it's updated
+      this.chordLoop.dispose();
       if (!newChord) {
         position.chord = `Chord ${position.beat}`;
-        this.chordNumToNote()
+        this.chordNumToNote();
         return;
       }
       position.chord = newChord;

@@ -15,7 +15,7 @@
     </div>
     <div class="dropdowns">
       <MenuList :keys="keys" :modes="modes" :scale="scale"/>
-      <Dropdown :positions="positions" :chords="chords"/>
+      <Dropdown :chord-loop="chordLoop" :positions="positions" :chords="chords"/>
     </div>
   </div>
 </template>
@@ -109,8 +109,6 @@ export default {
         synthTone = amSynth;
       }
 
-      console.log('synth tone', synthTone)
-
       const loop = new Tone.Part((time, value) => {
 
       //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
@@ -124,6 +122,8 @@ export default {
       {'time': '3:0', 'note': this.selectChords[3], 'duration': '1m'},
     ]).start(0)
     return loop;
+    },
+    watch: {
     }
   },
 
