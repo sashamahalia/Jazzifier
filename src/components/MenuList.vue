@@ -24,10 +24,11 @@ export default {
 <style lang="scss" scoped>
 
 .menus {
-  margin-right: 10rem;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  
 }
 
 </style>
