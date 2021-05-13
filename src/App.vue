@@ -121,15 +121,6 @@ export default {
       // return "chordchanged";
     },
 
-    onJazzifyChildClick() {
-      // console.log("fully jazzified")
-      this.chordLoop.dispose()
-      for (let position of this.positions) {
-        // console.log(position.chord);
-        position.chord="II"
-      }
-    },
-
     onPickChordsChildClick() {
       // console.log("fully picked chords")
       this.chordLoop.dispose()
@@ -137,7 +128,41 @@ export default {
         // console.log(position.chord);
         position.chord=this.randomChord()
       }
-    }
+    },
+
+    jazzifyChord(currentChord) {
+      let chord = currentChord;
+      
+      //this code correctly sets to major/minor
+      //but it doesn't play well with the library that interprets the data
+      //it just interprets lowercase values as C major by default
+      // if (Math.random() < .5) {
+      //   chord = chord.toLowerCase() 
+      // } else {
+      //   chord = chord.toUpperCase()
+      // }
+
+      // if (Math.random() < .25) {
+      //   chord += "dim";
+      // }
+
+      // if (Math.random() < .25) {
+      //   chord += "9";
+      // }
+
+      return chord;
+    },
+
+    onJazzifyChildClick() {
+      // console.log("fully jazzified")
+      this.chordLoop.dispose()
+      for (let position of this.positions) {
+        // console.log(position.chord);
+        // position.chord="II"
+        position.chord = this.jazzifyChord(position.chord);
+      }
+    },
+
   }
 }
 </script>
