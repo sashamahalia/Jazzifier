@@ -1,21 +1,22 @@
 <template>
   <div id="app">
     <NavComponent />
-    <div class="synth-menu">
-      <h4>Synth type</h4>
-      <v-select :disabled="disabled" :options="synthTones" v-model="synthTone" name="Instrument" class="instrument"/>
+    <div class="leftalign">
+      <div class="synth-menu">
+        <h4>Synth type</h4>
+        <v-select :disabled="disabled" :options="synthTones" v-model="synthTone" name="Instrument" class="instrument"/>
+      </div>
     </div>
     <Piano :chord=chord />
-    <ChordSelector />
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Jazzifier"/> -->
     <div class="flexbox">
       <PlayButton @change="onPlayButtonClick" :disabled="disabled" :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
       <ButtonPickChords @pickChordsClicked="onPickChordsChildClick" />
       <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
     </div>
+    <div class="keymenu">
+    <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
+    </div>
     <div class="dropdowns">
-      <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
       <Dropdown :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
     </div>
   </div>
@@ -28,7 +29,6 @@ import vSelect from 'vue-select'
 import PlayButton from './components/PlayButton.vue'
 import NavComponent from './components/NavComponent.vue'
 import Piano from './components/Piano.vue'
-import ChordSelector from './components/ChordSelector.vue'
 import Dropdown from './components/Dropdown.vue'
 import JazzifyButton from './components/JazzifyButton'
 import MenuList from './components/MenuList.vue'
@@ -48,7 +48,6 @@ export default {
     PlayButton,
     NavComponent,
     Piano,
-    ChordSelector,
     Dropdown,
     JazzifyButton,
     vSelect,
@@ -149,10 +148,26 @@ export default {
 
 <style lang="scss">  
 
+
+  #app {
+    @import url('https://fonts.googleapis.com/css2?family=Julee&family=PT+Sans&display=swap');
+    /*font-family: 'Julee', cursive;*/
+    font-family: 'PT Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    margin: auto;
+    margin-top: 5.5em;
+
+    background-color: $light-pink;
+    max-width: 530px;
+  }
+
   .flexbox {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-around;
+    margin: 2em;
   }
 
   button {
@@ -166,17 +181,6 @@ export default {
   button:hover {
     background-color: white;
     color: $darker-purple;
-  }
-
-  #app {
-    @import url('https://fonts.googleapis.com/css2?family=Julee&family=PT+Sans&display=swap');
-    font-family: 'Julee', cursive;
-    /* font-family: 'PT Sans', sans-serif; */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    margin-top: 5.5em;
-    background-color: $light-pink;
   }
 
   .dropdowns {
@@ -193,10 +197,16 @@ export default {
   }
 
   .synth-menu {
-    margin-right: 21em;
-    margin-bottom: 1em;
+    // margin-right: 21em;
+    // margin-bottom: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .leftalign {
+    margin: 2em;
+    display: flex;
+    justify-content: flex-start;
   }
 </style>
