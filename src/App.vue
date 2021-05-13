@@ -10,7 +10,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Jazzifier"/> -->
     <div class="flexbox">
-      <PlayButton @stop="console.log('stop')" @play="console.log('play')" :disabled="disabled" :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
+      <PlayButton @change="console.log('stop')" :disabled="disabled" :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
       <ButtonPickChords @pickChordsClicked="onPickChordsChildClick" />
       <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
     </div>
