@@ -80,7 +80,7 @@ export default {
 
     selectChords() {
       const chordArray = selectChords(this.positions, this.scale.key, this.scale.mode).map(chord => s11.chord.create(chord, 3));
-      console.log(chordArray);
+      // console.log(chordArray);
       return chordArray.map(chordInfo => chordInfo.chord.map(note => {
         return `${note.name}${note.octave}`
 
@@ -146,18 +146,31 @@ export default {
       }
     },
 
-    jazzifyChord(currentChord) {
-      let chord = currentChord;
-      
+    jazzifyChord(position) {
+      let newPosition = position;
       //this code correctly sets to major/minor
       //but it doesn't play well with the library that interprets the data
       //it just interprets lowercase values as C major by default
-      // if (Math.random() < .5) {
-      //   chord = chord.toLowerCase() 
-      // } else {
-      //   chord = chord.toUpperCase()
-      // }
+      const modeNum = Math.random();
+      if (modeNum < .25) {
+        newPosition.mode = "Major";
+      } else if (modeNum >= .25 && modeNum <= .5) {
+        newPosition.mode = "Minor";
+      } else if (modeNum > .5 && modeNum <= .75) {
+        newPosition.mode = "dim";
+      } else {
+        newPosition.mode = "aug";
+      }
 
+      const seventhNum = Math.random();
+      if (seventhNum < .3) {
+        newPosition.mode += "7";
+      } else if (seventhNum > .9) {
+        newPosition.mode += "9";
+      }
+
+
+      // console.log("POTATO*************", newPosition.chord, newPosition.mode);
       // if (Math.random() < .25) {
       //   chord += "dim";
       // }
@@ -166,7 +179,7 @@ export default {
       //   chord += "9";
       // }
 
-      return chord;
+      return newPosition;
     },
 
     onJazzifyChildClick() {
@@ -175,7 +188,7 @@ export default {
       for (let position of this.positions) {
         // console.log(position.chord);
         // position.chord="II"
-        position.chord = this.jazzifyChord(position.chord);
+        position = this.jazzifyChord(position);
       }
     },
     onPlayButtonClick() {

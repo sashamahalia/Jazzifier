@@ -40,7 +40,7 @@ export default {
       position.chord = newChord;
     },
     beatId(position) {
-      console.log(position);
+      // console.log(position);
       if (position === this.beat) {
         return "highlighted";
       }
