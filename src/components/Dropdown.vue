@@ -40,8 +40,12 @@ export default {
       position.chord = newChord;
     },
     beatId(position) {
-      // return "beat1";
-      return `beat${position}`;
+      console.log(position);
+      if (position === this.beat) {
+        return "highlighted";
+      }
+      // return `beat${position} BEAT: ${this.beat}`;
+      return "";
       
     }
   },
@@ -53,6 +57,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+  .highlighted {
+    background-color: orange;
+
+  }
 
   #chord-select {
     align-self: center;
