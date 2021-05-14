@@ -6,17 +6,13 @@ export const getChords = () => {
   return funChords.map(chord => chord.aliases[0]);
 }
 
-// gets all extensions that start with a major symbol
-const majorExtensions = getChords().filter(chord => chord.charAt(0) === 'M' || chord.startsWith('maj'));
-console.log('major', majorExtensions)
-// gets all extensions that start with a minor symbol
-const minorExtensions = getChords().filter(chord => chord.charAt(0) === 'm' && !chord.startsWith('maj'));
+// gets all extensions that start with a minor symbol or dim
+const minorExtensions = getChords().filter(chord => (chord.charAt(0) === 'm' && !chord.startsWith('maj')) || chord.startsWith('dim'));
 console.log('minor', minorExtensions);
 
-// starts with neither
-// My plan is to add the neither chords for both major and minor chords but not sure if that's sound from a music theory perspective
-const neither = getChords().filter(chord => !majorExtensions.includes(chord) && !minorExtensions.includes(chord));
-console.log('neither', neither);
+// gets all other extensions
+const majorExtensions = getChords().filter(chord => !minorExtensions.includes(chord));
+console.log('major', majorExtensions);
 
 // Refactor to use randomChord method in App, by making the chord in this.chords[randomNumber] a variable based on method argument.
 const randomJazzChord = (chordArray) => {
@@ -30,13 +26,11 @@ const randomJazzChord = (chordArray) => {
 // Builds arrays of all compatable chords based on chord mode, and outputs a random chord extension.
 const chordChange = (chordName, chordMode) => {
   if (chordMode === 'Major') {
-    const majCompatable = majorExtensions.concat(neither);
-    return `${chordName}${randomJazzChord(majCompatable)}`
+    return `${chordName}${randomJazzChord(majorExtensions)}`
   }
 
   if (chordMode === 'Minor') {
-    const minCompatable = minorExtensions.concat(neither);
-    return `${chordName}${randomJazzChord(minCompatable)}`
+    return `${chordName}${randomJazzChord(minorExtensions)}`
   }
 };
 
