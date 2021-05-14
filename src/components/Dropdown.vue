@@ -1,7 +1,7 @@
 <template>
   <section id="chord-select">
     <div v-for="position in positions" :key="position.beat" class="position.beat">
-      <h4 :class="beatId(position.beat)">{{ position.chord }}</h4>
+      <h4 :class="beatId(position.beat)">{{ capitalizedNumeral(position) }}</h4>
       <v-select
         :disabled="disabled"
         :clearable="false"
@@ -47,10 +47,26 @@ export default {
       // return `beat${position} BEAT: ${this.beat}`;
       return "";
       
+    },
+
+    capitalizedNumeral(position) {
+      console.log("APRICOT*****",position);
+
+      if (position.chord.includes("Ch")) {
+        return position.chord;
+      }
+
+      if (position.mode === "Minor" || position.mode.includes("dim")) {
+      return position.chord.toLowerCase();
+      }
+
+      return position.chord;
     }
   },
   computed: {
     options: () => {this.chords},
+
+    
     
   }
 }
