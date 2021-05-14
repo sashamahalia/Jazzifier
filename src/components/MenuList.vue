@@ -1,7 +1,7 @@
 <template>
   <section class="menus">
-    <Menu :scale="scale" :options="keys" type="key" name="Key" />
-    <Menu :scale="scale" :options="modes" type="mode" name="Mode" />
+    <Menu :disabled="disabled" :chord-loop="chordLoop" :scale="scale" :options="keys" type="key" name="Key" />
+    <Menu :disabled="disabled" :chord-loop="chordLoop" :scale="scale" :options="modes" type="mode" name="Mode" />
   </section>
 </template>
 
@@ -12,7 +12,7 @@ export default {
   components: {
     Menu
   },
-  props: ['keys', 'modes', 'scale'],
+  props: ['keys', 'modes', 'scale', 'chordLoop', 'disabled'],
   watch: {
     passValue() {
       this.$emit('v-select', this.select)
@@ -24,10 +24,11 @@ export default {
 <style lang="scss" scoped>
 
 .menus {
-  margin-right: 10rem;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  
 }
 
 </style>

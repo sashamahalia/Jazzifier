@@ -20,9 +20,10 @@ import { bpm } from '../helpers/bpm'
       play: 'Play'
     };
   },
-  props: ['selectedChords', 'chordLoop'],
+  props: ['selectedChords', 'chordLoop', 'disabled'],
   methods: {
     handleClick() {
+      this.$emit('change');
       bpm(100);
       this.chordLoop;
       this.chordLoop.loopStart = 0;
@@ -35,7 +36,7 @@ import { bpm } from '../helpers/bpm'
     switchPlay() {
 
       if (this.play !== 'Play') {
-        this.stop()
+        this.stop();
         return this.play = 'Play';
       }
       Tone.start();

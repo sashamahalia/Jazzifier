@@ -1,6 +1,7 @@
+// It's very possible this file can be deleted
 <template lang="">
   <div>
-    <p>ChordSelector goes here</p>
+    <p></p>
   </div>
 </template>
 <script>
