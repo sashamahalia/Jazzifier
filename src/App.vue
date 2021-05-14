@@ -17,7 +17,7 @@
     <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
     </div>
     <div class="dropdowns">
-      <Dropdown :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
+      <Dropdown :beat="beat" :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
     </div>
   </div>
 </template>
@@ -127,6 +127,7 @@ export default {
       this.chordLoop.dispose()
       for (let position of this.positions) {
         // console.log(position.chord);
+        //position.mode, not chord
         position.chord="II"
       }
     },
