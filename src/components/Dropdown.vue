@@ -1,7 +1,7 @@
 <template>
   <section id="chord-select">
     <div v-for="position in positions" :key="position.beat" class="position.beat">
-      <h4 :class="beatId(position.beat)">{{ position.beat }}{{ position.chord }}</h4>
+      <h4 :class="beatId(position.beat)">{{ position.chord }}</h4>
       <v-select
         :disabled="disabled"
         :clearable="false"
@@ -59,7 +59,9 @@ export default {
 <style lang="scss" scoped>
 
   .highlighted {
-    background-color: orange;
+    background-color: white;
+    border: 2px solid $darker-purple;
+    border-radius: 1em;
 
   }
 
