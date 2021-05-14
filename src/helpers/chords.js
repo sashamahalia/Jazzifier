@@ -1,8 +1,9 @@
-import { Scale } from "tonal";
+import { Scale } from "@tonaljs/tonal";
+
 
 export const mapToChords = (position, root, mode) => {
 
-  const notes = Scale.notes(`${root} ${mode.toLowerCase()}`)
+  const notes = Scale.get(`${root} ${mode.toLowerCase()}`).notes
 
   let keyMode = '';
   if (mode === 'Major') {

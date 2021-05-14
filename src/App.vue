@@ -36,6 +36,7 @@ import ButtonPickChords from './components/ButtonPickChords'
 //helpers
 import { synth, fmSynth, amSynth } from './helpers/synth'
 import { selectChords } from './helpers/chords'
+import { getChords } from './helpers/tonal'
 import { convertNoteToKeyboard } from './helpers/convertNoteToKeyboard'
 //libraries
 import * as Tone from 'tone'
@@ -70,7 +71,8 @@ export default {
       chord: this.currentChord,
       synthTones: ['basic synth', 'metallic', 'dark'],
       synthTone: 'basic synth',
-      disabled: false
+      disabled: false,
+      tonal: getChords()
     }
   },
   computed: {
