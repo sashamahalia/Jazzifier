@@ -34,7 +34,6 @@ export const mapToChords = (position, root, mode) => {
  return (valueMap[position.chord] || valueMap['default']);
 };
 
-// Needs more defensive code, could break if default value of chord ie 'Chord 1' rather than roman numeral was still selected.
 export const selectChords = (positions, key, mode) => {
     return positions.map(position => {
       const newPosition = {...position};
