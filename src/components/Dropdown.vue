@@ -50,7 +50,7 @@ export default {
     },
 
     capitalizedNumeral(position) {
-      console.log("APRICOT*****",position);
+      // console.log("APRICOT*****",position);
 
       if (position.chord.includes("Ch")) {
         return position.chord;

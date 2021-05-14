@@ -74,8 +74,11 @@ export const convertNoteToKeyboard = (note) => {
     
     //B
     case 'Cb':
+      newNote = 'B';
+      octave = parseInt(octave) - 1;
+      break;
     case 'A##':
-      newNote = 'A';
+      newNote = 'B';
       break;
   }
 
