@@ -72,6 +72,7 @@ export default {
       synthTones: ['basic synth', 'metallic', 'dark'],
       synthTone: 'basic synth',
       disabled: false,
+      // the tonal property is just placeholder to test the functionality, not something that will live in state.
       tonal: getChords()
     }
   },
