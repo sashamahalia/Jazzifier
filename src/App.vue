@@ -4,7 +4,7 @@
     <div class="leftalign">
       <div class="synth-menu">
         <h4>Synth type</h4>
-        <v-select :disabled="disabled" :options="synthTones" v-model="synthTone" name="Instrument" class="instrument"/>
+        <v-select :clearable="false" :disabled="disabled" :options="synthTones" v-model="synthTone" name="Instrument" class="instrument"/>
       </div>
     </div>
     <Piano :chord=chord />

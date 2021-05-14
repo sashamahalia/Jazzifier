@@ -1,7 +1,7 @@
 <template>
   <div :class="name">
     <h5>{{ name }}</h5>
-    <v-select :disabled="disabled" :options="options" @input="chordLoop.dispose()" :placeholder="scale[type]" :value="scale[type]" v-model="scale[type]"/>
+    <v-select :disabled="disabled" :clearable="false" :options="options" @input="chordLoop.dispose()" :placeholder="scale[type]" :value="scale[type]" v-model="scale[type]"/>
   </div>
 </template>
 

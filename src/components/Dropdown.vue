@@ -4,13 +4,14 @@
       <h4>{{ position.chord }}</h4>
       <v-select
         :disabled="disabled"
+        :clearable="false"
         :options="chords"
         placeholder="Select chord"
         :value="position.chord"
         @input="chord => updateChord(position, chord)"
         >
         </v-select>
-        <v-select :disabled="disabled" @input="chordLoop.dispose()" :options="modes" :placeholder="position.mode" :value="position.mode" v-model="position.mode"/>
+        <v-select :clearable="false" :disabled="disabled" @input="chordLoop.dispose()" :options="modes" :placeholder="position.mode" :value="position.mode" v-model="position.mode"/>
       </div>
   </section>
 </template>
