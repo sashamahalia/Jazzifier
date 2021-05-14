@@ -80,7 +80,7 @@ export default {
 
     selectChords() {
       const chordArray = selectChords(this.positions, this.scale.key, this.scale.mode).map(chord => s11.chord.create(chord, 3));
-      console.log(chordArray);
+      // console.log(chordArray);
       return chordArray.map(chordInfo => chordInfo.chord.map(note => {
         return `${note.name}${note.octave}`
 
@@ -112,6 +112,7 @@ export default {
       {'time': '2:0', 'note': this.convertNotes(this.selectChords[2]), 'duration': '1m'},
       {'time': '3:0', 'note': this.convertNotes(this.selectChords[3]), 'duration': '1m'},
     ]).start(0)
+    console.log("CUCUMBER****************",loop);
     return loop;
     },
     disablePlay() {
@@ -121,7 +122,7 @@ export default {
           result = false;
         }
       }
-      console.log(result);
+      // console.log("POTATO*********",result);
       return result;
     }
   },
@@ -152,21 +153,30 @@ export default {
       //but it doesn't play well with the library that interprets the data
       //it just interprets lowercase values as C major by default
       const modeNum = Math.random();
-      if (modeNum < .25) {
-        newPosition.mode = "Major";
-      } else if (modeNum >= .25 && modeNum <= .5) {
-        newPosition.mode = "Minor";
-      } else if (modeNum > .5 && modeNum <= .75) {
+      if (modeNum < .16) {
         newPosition.mode = "dim";
-      } else {
+      } else if (modeNum >= .16 && modeNum <= .25) {
         newPosition.mode = "aug";
+      } else if (modeNum > .25 && modeNum <= .62) {
+        newPosition.mode = "Major";
+      } else {
+        newPosition.mode = "Minor";
       }
 
-      const seventhNum = Math.random();
-      if (seventhNum < .3) {
-        newPosition.mode += "7";
-      } else if (seventhNum > .9) {
-        newPosition.mode += "9";
+      if (newPosition.mode == "Major" || newPosition.mode == "Minor") {
+        const majorNum = Math.random();
+        if (majorNum < .8) {
+          newPosition.mode += "7";
+        } else {
+          newPosition.mode += "9";
+        }
+      } else {
+        const seventhNum = Math.random();
+        if (seventhNum < .3) {
+          newPosition.mode += "7";
+        } else if (seventhNum > .9) {
+          newPosition.mode += "9";
+        }
       }
 
 
