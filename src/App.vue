@@ -72,6 +72,7 @@ export default {
       synthTones: ['basic synth', 'metallic', 'dark'],
       synthTone: 'basic synth',
       disabled: false,
+      chordName: '',
       // the tonal property is just placeholder to test the functionality, not something that will live in state.
       tonal: getChords()
     }
@@ -80,12 +81,13 @@ export default {
 
     selectChords() {
       const chordArray = selectChords(this.positions, this.scale.key, this.scale.mode).map(chord => s11.chord.create(chord, 3));
-      console.log(chordArray);
-      return chordArray.map(chordInfo => chordInfo.chord.map(note => {
+
+  return chordArray.map(chordInfo => chordInfo.chord.map(note => {
         return `${note.name}${note.octave}`
 
       }));
     },
+
     chordLoop() {
       let synthTone = ''
 
@@ -101,6 +103,7 @@ export default {
 
       //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
       //conditionally renders chord name as state
+      this.chord = value.note;
       this.chord = value.note;
       synthTone.triggerAttackRelease(value.note, value.duration, time);
     }, [
