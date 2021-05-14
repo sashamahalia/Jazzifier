@@ -102,7 +102,7 @@ export default {
       //value.note is the array of notes in the chord, s11.identify analyzes what chord it is and returns the chord name as a string
       //conditionally renders chord name as state
       this.chord = value.note;
-      this.beat = value.time[0];
+      this.beat = Number(value.time[0]) + 1;
 
       synthTone.triggerAttackRelease(value.note, value.duration, time);
     }, [
