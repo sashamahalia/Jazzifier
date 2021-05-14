@@ -1,7 +1,7 @@
 <template>
   <section id="chord-select">
     <div v-for="position in positions" :key="position.beat" class="position.beat">
-      <h4>{{ position.chord }}</h4>
+      <h4 :id="beatId(position.beat)" >{{ position.chord }}</h4>
       <v-select
         :disabled="disabled"
         :options="chords"
@@ -37,10 +37,16 @@ export default {
         return;
       }
       position.chord = newChord;
+    },
+    beatId(position) {
+      // return "beat1";
+      return `beat${position}`;
+      
     }
   },
   computed: {
-    options: () => this.chords
+    options: () => {this.chords},
+    
   }
 }
 </script>
