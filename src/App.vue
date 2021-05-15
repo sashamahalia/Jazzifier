@@ -17,7 +17,7 @@
     <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
     </div>
     <div class="dropdowns">
-      <Dropdown :select-chords="selectChords" :chord-names="getChordNames" :beat="beat" :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale" :chord="chord" />
+      <Dropdown @chord-toggle="onChordToggle" :select-chords="selectChords" :chord-names="getChordNames" :beat="beat" :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale" :chord="chord" />
     </div>
   </div>
 </template>
@@ -212,6 +212,10 @@ export default {
       // runs convertNoteToKeyboard function on each chord in array, which changes double flats or double sharps into keyboard readble notes.
       const convertedChords = allChords.map(chord => chord.map(note => {return convertNoteToKeyboard(note)}))
       return convertedChords;
+    },
+    onChordToggle(position, index) {
+      this.beat = position.beat;
+      return this.chord = this.selectChords[index];
     }
   }
 }

@@ -34,7 +34,6 @@ import { bpm } from '../helpers/bpm'
     },
     //switch state between play and stop text, start and stop playback.
     switchPlay() {
-
       if (this.play !== 'Play') {
         this.stop();
         return this.play = 'Play';

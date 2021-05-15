@@ -1,7 +1,7 @@
 <template>
   <section id="chord-select">
     <div v-for="position, index of positions" :key="position.beat" class="position.beat">
-      <h4 @click="toggleChords(position, index)" :class="beatId(position.beat)">{{ chordNames[index] }}</h4>
+      <h4 @click="toggleChords(position, index)" :disabled="disabled" :class="beatId(position.beat)">{{ chordNames[index] }}</h4>
       <v-select
         :disabled="disabled"
         :clearable="false"
@@ -63,15 +63,14 @@ export default {
       return position.chord;
     },
     toggleChords(position, index) {
-      this.beat = position.beat;
-      this.chord = this.selectChords[index];
+      
+      this.$emit('chord-toggle', position, index);
     }
   },
   computed: {
-    options: () => {this.chords},
+    options: () => {this.chords}
 
-    
-    
+
   }
 }
 </script>
