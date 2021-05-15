@@ -14,10 +14,10 @@
       <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
     </div>
     <div class="keymenu">
-    <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
+    <MenuList :chord-names="getChordNames" :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
     </div>
-    <div :chord-names="getChordNames" class="dropdowns">
-      <Dropdown :beat="beat" :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
+    <div class="dropdowns">
+      <Dropdown :chord-names="getChordNames" :beat="beat" :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
     </div>
   </div>
 </template>

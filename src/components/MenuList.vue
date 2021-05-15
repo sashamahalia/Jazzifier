@@ -12,7 +12,7 @@ export default {
   components: {
     Menu
   },
-  props: ['keys', 'modes', 'scale', 'chordLoop', 'disabled'],
+  props: ['keys', 'modes', 'scale', 'chordLoop', 'disabled', 'chordNames'],
   watch: {
     passValue() {
       this.$emit('v-select', this.select)

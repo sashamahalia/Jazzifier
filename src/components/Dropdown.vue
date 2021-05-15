@@ -1,7 +1,7 @@
 <template>
   <section id="chord-select">
-    <div v-for="position in positions" :key="position.beat" class="position.beat">
-      <h4 :class="beatId(position.beat)">{{ capitalizedNumeral(position) }}</h4>
+    <div v-for="position, index of positions" :key="position.beat" class="position.beat">
+      <h4 :class="beatId(position.beat)">{{ chordNames[index] }}</h4>
       <v-select
         :disabled="disabled"
         :clearable="false"
