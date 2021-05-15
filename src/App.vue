@@ -16,7 +16,7 @@
     <div class="keymenu">
     <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
     </div>
-    <div class="dropdowns">
+    <div :chord-names="getChordNames" class="dropdowns">
       <Dropdown :beat="beat" :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
     </div>
   </div>
@@ -36,7 +36,6 @@ import ButtonPickChords from './components/ButtonPickChords'
 //helpers
 import { synth, fmSynth, amSynth } from './helpers/synth'
 import { selectChords } from './helpers/chords'
-import { getChords } from './helpers/tonal'
 import { convertNoteToKeyboard } from './helpers/convertNoteToKeyboard'
 //libraries
 import * as Tone from 'tone'
@@ -71,21 +70,23 @@ export default {
       chord: this.currentChord,
       synthTones: ['basic synth', 'metallic', 'dark'],
       synthTone: 'basic synth',
-      disabled: false,
-      chordName: '',
-      // the tonal property is just placeholder to test the functionality, not something that will live in state.
-      tonal: getChords()
+      disabled: false
+
     }
   },
   computed: {
 
-    selectChords() {
+    selectChords() {      
       const chordArray = selectChords(this.positions, this.scale.key, this.scale.mode).map(chord => s11.chord.create(chord, 3));
       // console.log(chordArray);
       return chordArray.map(chordInfo => chordInfo.chord.map(note => {
         return `${note.name}${note.octave}`
 
       }));
+    },
+
+    getChordNames() {
+      return selectChords(this.positions, this.scale.key, this.scale.mode);
     },
 
     chordLoop() {
@@ -190,7 +191,6 @@ export default {
       // if (Math.random() < .25) {
       //   chord += "9";
       // }
-
       return newPosition;
     },
 

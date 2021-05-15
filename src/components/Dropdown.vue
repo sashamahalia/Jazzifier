@@ -25,7 +25,7 @@ export default {
     return {
     }
   },
-  props: ['positions', 'chords', 'chordLoop', 'modes', 'scale', 'disabled', 'beat'],
+  props: ['positions', 'chords', 'chordLoop', 'modes', 'scale', 'disabled', 'beat', 'chordNames'],
   components: {
     vSelect
   },
