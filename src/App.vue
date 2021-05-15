@@ -76,7 +76,7 @@ export default {
   },
   computed: {
 
-    selectChords() {      
+    selectChords() {
       const chordArray = selectChords(this.positions, this.scale.key, this.scale.mode).map(chord => s11.chord.create(chord, 3));
       return chordArray.map(chordInfo => chordInfo.chord.map(note => {
         return `${note.name}${note.octave}`

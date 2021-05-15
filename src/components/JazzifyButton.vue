@@ -1,7 +1,7 @@
 <template>
   <div>
     <button id="jazzify" @click="onClickJazzify" >
-      ***Jazzify***
+      &#127927; Jazzify! &#127927;
     </button>
   </div>
 </template>
