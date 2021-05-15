@@ -160,12 +160,12 @@ export default {
       } else if (modeNum >= .16 && modeNum <= .25) {
         newPosition.mode = "aug";
       } else if (modeNum > .25 && modeNum <= .62) {
-        newPosition.mode = "Major";
+        newPosition.mode = "M";
       } else {
-        newPosition.mode = "Minor";
+        newPosition.mode = "m";
       }
 
-      if (newPosition.mode == "Major" || newPosition.mode == "Minor") {
+      if (newPosition.mode == "M" || newPosition.mode == "m") {
         const majorNum = Math.random();
         if (majorNum < .8) {
           newPosition.mode += "7";
