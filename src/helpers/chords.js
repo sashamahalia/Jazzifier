@@ -1,5 +1,4 @@
 import { Scale } from "@tonaljs/tonal";
-import s11 from 'sharp11'
 
 export const mapToChords = (position, root, mode) => {
 
@@ -42,7 +41,3 @@ export const selectChords = (positions, key, mode) => {
       return newPosition.chord;
   })
 };
-
-export const getChordName = (array) => {
-  return s11.identifyArray(array);
-}

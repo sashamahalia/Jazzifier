@@ -14,7 +14,7 @@
       <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
     </div>
     <div class="keymenu">
-    <MenuList :chord-names="getChordNames" :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
+    <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
     </div>
     <div class="dropdowns">
       <Dropdown :chord-names="getChordNames" :beat="beat" :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale"/>
@@ -78,7 +78,6 @@ export default {
 
     selectChords() {      
       const chordArray = selectChords(this.positions, this.scale.key, this.scale.mode).map(chord => s11.chord.create(chord, 3));
-      // console.log(chordArray);
       return chordArray.map(chordInfo => chordInfo.chord.map(note => {
         return `${note.name}${note.octave}`
 
@@ -115,7 +114,7 @@ export default {
       {'time': '2:0', 'note': this.convertNotes(this.selectChords[2]), 'duration': '1m'},
       {'time': '3:0', 'note': this.convertNotes(this.selectChords[3]), 'duration': '1m'},
     ]).start(0)
-    console.log("CUCUMBER****************",loop);
+
     return loop;
     },
     disablePlay() {
@@ -210,7 +209,7 @@ export default {
       return this.disabled = false;
     },
     convertNotes(chordArray) {
-      let convertedChord = chordArray.map(note => {return convertNoteToKeyboard(note)})
+      const convertedChord = chordArray.map(note => {return convertNoteToKeyboard(note)})
       return convertedChord;
     }
   }
