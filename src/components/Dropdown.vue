@@ -1,7 +1,7 @@
 <template>
   <section id="chord-select">
     <div v-for="position, index of positions" :key="position.beat" class="position.beat">
-      <h4 :class="beatId(position.beat)">{{ chordNames[index] }}</h4>
+      <h4 @click="toggleChords(position, index)" :class="beatId(position.beat)">{{ chordNames[index] }}</h4>
       <v-select
         :disabled="disabled"
         :clearable="false"
@@ -25,7 +25,7 @@ export default {
     return {
     }
   },
-  props: ['positions', 'chords', 'chordLoop', 'modes', 'scale', 'disabled', 'beat', 'chordNames'],
+  props: ['positions', 'chords', 'chordLoop', 'modes', 'scale', 'disabled', 'beat', 'chordNames', 'chord', 'selectChords'],
   components: {
     vSelect
   },
@@ -61,6 +61,10 @@ export default {
       }
 
       return position.chord;
+    },
+    toggleChords(position, index) {
+      this.beat = position.beat;
+      this.chord = this.selectChords[index];
     }
   },
   computed: {
