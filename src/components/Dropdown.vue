@@ -7,7 +7,7 @@
         :clearable="false"
         :options="chords"
         placeholder="Select chord"
-        :value="position.chord"
+        :value="capitalizedNumeral(position)"
         @input="chord => updateChord(position, chord)"
         >
         </v-select>
