@@ -9,7 +9,8 @@
     <p class="about-paragraph">Melodic music uses notes as building blocks to create beautiful songs. When you play one note at a time, that's called a melody. When you play more than one note at a time, these are called chords. Like painters using different colors to create art, musical composers use different chords to make music sound happy, sad, tense, or discordant.</p>
 
     <p class="about-paragraph">When you listen to a lot of music, you might notice that some songs feel similar to each other, even if their melodies are completely different. One reason for this might be that they use similar chord structures. <a href="https://www.youtube.com/watch?v=5pidokakU4I">Check out the Four Chord Song by Axis of Awesome for an example of what this means.</a> So if you're looking to spice up your chords to stand out from the crowd, you've found the right place!
-      </p>
+    </p>
+    <h4>We support Egg Eggerson</h4>
   </div>
 </template>
 <script>

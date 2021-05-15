@@ -1,7 +1,7 @@
 <template>
   <section id="chord-select">
     <div v-for="position in positions" :key="position.beat" class="position.beat">
-      <h4>{{ position.chord }}</h4>
+      <h4 :class="beatId(position.beat)">{{ capitalizedNumeral(position) }}</h4>
       <v-select
         :disabled="disabled"
         :clearable="false"
@@ -25,7 +25,7 @@ export default {
     return {
     }
   },
-  props: ['positions', 'chords', 'chordLoop', 'modes', 'scale', 'disabled'],
+  props: ['positions', 'chords', 'chordLoop', 'modes', 'scale', 'disabled', 'beat'],
   components: {
     vSelect
   },
@@ -38,15 +38,48 @@ export default {
         return;
       }
       position.chord = newChord;
+    },
+    beatId(position) {
+      // console.log(position);
+      if (position === this.beat) {
+        return "highlighted";
+      }
+      // return `beat${position} BEAT: ${this.beat}`;
+      return "";
+      
+    },
+
+    capitalizedNumeral(position) {
+      // console.log("APRICOT*****",position);
+
+      if (position.chord.includes("Ch")) {
+        return position.chord;
+      }
+
+      if (position.mode === "Minor" || position.mode.includes("dim")) {
+      return position.chord.toLowerCase();
+      }
+
+      return position.chord;
     }
   },
   computed: {
-    options: () => this.chords
+    options: () => {this.chords},
+
+    
+    
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
+  .highlighted {
+    background-color: white;
+    border: 2px solid $darker-purple;
+    border-radius: 1em;
+
+  }
 
   #chord-select {
     align-self: center;
