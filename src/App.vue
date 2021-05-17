@@ -256,15 +256,11 @@ export default {
   }
 
   .instrument {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   
   }
 
   .synth-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
     min-width: 10em;
   }
 
