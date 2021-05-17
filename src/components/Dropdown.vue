@@ -1,6 +1,6 @@
 <template>
   <section id="chord-select">
-    <div v-for="position, index of positions" :key="position.beat" class="position.beat">
+    <div v-for="position, index of positions" :key="position.beat" class="chord">
       <h4 @click="toggleChords(position, index)" :class="beatId(position.beat)">{{ chordNames[index] }}</h4>
       <v-select
         :disabled="disabled"
@@ -90,6 +90,10 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+  }
+
+  .chord {
+    min-width: 7em;
   }
 
 </style>
