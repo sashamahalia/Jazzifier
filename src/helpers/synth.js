@@ -38,3 +38,27 @@ export const fmSynth = new Tone.PolySynth(Tone.FMSynth, {
     oscillator : {
         type: "square"
   }}).connect(amFilter).toDestination();
+
+
+  // Multisampled piano, thanks to https://github.com/ledlamp/piano-sounds
+  export const sampler = new Tone.Sampler({
+    urls: {
+      C1: 'c0.mp3',
+      C2: 'c1.mp3',
+      C3: 'c2.mp3',
+      D3: 'd2.mp3',
+      E3: 'e2.mp3',
+      F3: 'f2.mp3',
+      G3: 'g2.mp3',
+      A3: 'a2.mp3',
+      B3: 'b2.mp3',
+      C4: 'c3.mp3',
+      D4: 'd3.mp3',
+      E4: 'e3.mp3',
+      F4: 'f3.mp3',
+      G4: 'g3.mp3',
+      A4: 'a3.mp3',
+      B4: 'b3.mp3'
+    },
+    baseUrl: 'https://ledlamp.github.io/piano-sounds/GreatAndSoftPiano/',
+  }).toDestination();

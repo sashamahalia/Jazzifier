@@ -34,7 +34,7 @@ import JazzifyButton from './components/JazzifyButton'
 import MenuList from './components/MenuList.vue'
 import ButtonPickChords from './components/ButtonPickChords'
 //helpers
-import { synth, fmSynth, amSynth } from './helpers/synth'
+import { synth, fmSynth, amSynth, sampler } from './helpers/synth'
 import { selectChords } from './helpers/chords'
 import { convertNoteToKeyboard } from './helpers/convertNoteToKeyboard'
 //libraries
@@ -68,7 +68,7 @@ export default {
       scale: {key: 'C', mode: 'Major'},
       beat: this.currentBeat,
       chord: this.currentChord,
-      synthTones: ['basic synth', 'fm wah', 'square'],
+      synthTones: ['basic synth', 'fm wah', 'square', 'piano'],
       synthTone: 'basic synth',
       disabled: false
 
@@ -97,6 +97,8 @@ export default {
         synthTone = fmSynth;
       } else if (this.synthTone === 'square') {
         synthTone = amSynth;
+      } else if (this.synthTone === 'piano') {
+        synthTone = sampler;
       }
 
       const loop = new Tone.Part((time, value) => {
