@@ -265,6 +265,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 10em;
   }
 
   .leftalign {
