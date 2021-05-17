@@ -29,14 +29,21 @@ button {
   box-shadow: 0 0.3em $medium-purple;
 }
 
-button:hover {
+button:hover:enabled {
   background-color: white;
   color: $darker-purple;
 }
+
 button:active {
   transform: translate(0, 0.2em);
   box-shadow: 0 0.2em $darkest-purple
 }
+
+button:disabled {
+  background-color: $pink;
+  
+}
+
 body {
   background-color: $medium-purple;
 }
