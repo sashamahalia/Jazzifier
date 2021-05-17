@@ -10,8 +10,8 @@
     <Piano :chord=chord />
     <div class="flexbox">
       <PlayButton @change="onPlayButtonClick" :disabled="disabled" :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
-      <ButtonPickChords @pickChordsClicked="onPickChordsChildClick" />
-      <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" />
+      <ButtonPickChords @pickChordsClicked="onPickChordsChildClick" :disabled="disabled" />
+      <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" :disabled="disabled" />
     </div>
     <div class="keymenu">
     <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>

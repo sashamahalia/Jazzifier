@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button id="pickchords" @click="onClickPickChords" >
+    <button id="pickchords" @click="onClickPickChords" :disabled="disabled" >
       Pick chords for me
     </button>
   </div>
@@ -10,11 +10,14 @@
 <script>
 export default {
 name: 'ButtonPickChords',
+  props: ['disabled' ],
   methods: {
     onClickPickChords() {
-      
-      // console.log("pick chords clicked")
-      this.$emit('pickChordsClicked')
+      console.log("clicked", this.disabled)
+      if (!this.disabled) {
+        console.log(" not disabled")
+        this.$emit('pickChordsClicked')
+      }
     }
   }
 }

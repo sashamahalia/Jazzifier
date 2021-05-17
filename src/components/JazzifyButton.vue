@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button id="jazzify" @click="onClickJazzify" >
+    <button id="jazzify" @click="onClickJazzify" :disabled="disabled" >
       &#127927; Jazzify! &#127927;
     </button>
   </div>
@@ -10,6 +10,7 @@
 <script>
 export default {
 name: 'JazzifyButton',
+  props: ['disabled' ],
   methods: {
     onClickJazzify() {
       
