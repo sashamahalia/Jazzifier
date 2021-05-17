@@ -248,14 +248,11 @@ export default {
   }
 
   .dropdowns {
-    font-size: .75em;
+    
     display: flex;
     align-self: flex-end;
     justify-content: center;
-    
     padding-bottom: 3em;
-  
-
   }
 
   .instrument {
@@ -265,8 +262,6 @@ export default {
   }
 
   .synth-menu {
-    // margin-right: 21em;
-    // margin-bottom: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
