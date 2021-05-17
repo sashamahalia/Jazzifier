@@ -42,6 +42,16 @@ body {
 }
 
 
+
+.vs__dropdown-toggle {
+  background-color: orange;
+}
+
+.vs--disabled .vs__clear, .vs--disabled .vs__dropdown-toggle, .vs--disabled .vs__open-indicator, .vs--disabled .vs__search, .vs--disabled .vs__selected {
+  background-color: green;
+}
+
+
 @media only screen and (max-width: 600px) {
   $accidental-width: .5em;
 }
