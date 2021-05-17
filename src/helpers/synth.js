@@ -9,19 +9,32 @@ export let synth = new Tone.PolySynth(Tone.Synth, {
   }
 }).toDestination();
 
+const fmFilter = new Tone.AutoFilter({
+  frequency: 30,
+  depth: 0,
+  baseFrequency: 200
+});
+
 export const fmSynth = new Tone.PolySynth(Tone.FMSynth, {
-  "harmonicity": 15,
-  "modulationIndex": 20,
-  "oscillator" : {
-      "type": "sine"
-  }}).toDestination();
+  volume: -10,
+  harmonicity: 1,
+  modulationIndex: 10,
+  oscillator : {
+      type: "sine"
+  }}).connect(fmFilter).toDestination();
+
+  const amFilter = new Tone.AutoFilter({
+    frequency: 30,
+    depth: 0,
+    baseFrequency: 200
+  });
 
   export const amSynth = new Tone.PolySynth(Tone.AMSynth, {
-    "harmonicity": 0.5,
-    "modulationIndex": 20,
-    "detune": 3,
-    "volume": -3,
-    "oscillator" : {
-        "type": "sine"
-    }}).toDestination();
-
+    harmonicity: 1,
+    modulationIndex: 5,
+    portamento: 2,
+    volume: -15,
+    detune: 3,
+    oscillator : {
+        type: "square"
+  }}).connect(amFilter).toDestination();

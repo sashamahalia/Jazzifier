@@ -68,7 +68,7 @@ export default {
       scale: {key: 'C', mode: 'Major'},
       beat: this.currentBeat,
       chord: this.currentChord,
-      synthTones: ['basic synth', 'metallic', 'dark'],
+      synthTones: ['basic synth', 'fm wah', 'square'],
       synthTone: 'basic synth',
       disabled: false
 
@@ -93,9 +93,9 @@ export default {
 
       if (this.synthTone === 'basic synth') {
         synthTone = synth;
-      } else if (this.synthTone === 'metallic') {
+      } else if (this.synthTone === 'fm wah') {
         synthTone = fmSynth;
-      } else if (this.synthTone === 'dark') {
+      } else if (this.synthTone === 'square') {
         synthTone = amSynth;
       }
 
