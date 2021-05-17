@@ -41,6 +41,7 @@ button:active {
 
 button:disabled {
   background-color: $pink;
+  cursor: not-allowed;
   
 }
 
