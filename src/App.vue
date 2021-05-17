@@ -248,19 +248,10 @@ export default {
   }
 
   .dropdowns {
-    
-    display: flex;
-    align-self: flex-end;
-    justify-content: center;
     padding-bottom: 3em;
   }
 
-  .instrument {
-   
-  }
-
   .synth-menu {
-
     min-width: 10em;
   }
 

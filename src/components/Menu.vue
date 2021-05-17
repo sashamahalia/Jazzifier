@@ -1,5 +1,5 @@
 <template>
-  <div :class="name">
+  <div :class="name" class="menu">
     <h4>{{ name }}</h4>
     <v-select :disabled="disabled" :clearable="false" :options="options" @input="chordLoop.dispose()" :placeholder="scale[type]" :value="scale[type]" v-model="scale[type]"/>
   </div>
@@ -18,4 +18,7 @@
 </script>
 
 <style lang="scss" scoped>
+  .menu {
+    min-width: 7em;
+  }
 </style>
