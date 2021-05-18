@@ -1,7 +1,9 @@
 <template lang="">
   <div id="app">
     <NavComponent />
-    <h3>About Jazzifier</h3>
+    <br>
+    <br>
+    <h3 class="heading">About Jazzifier</h3>
     <p class="about-paragraph">Jazzifier is a music theory app that takes simple chord structures and makes them spicier.</p>
 
     <h3>Ok cool, how do I use it?</h3>
@@ -31,6 +33,8 @@
 
 
     <h3>We support Egg Eggerson</h3>
+    <br>
+    <br>
   </div>
 </template>
 <script>
