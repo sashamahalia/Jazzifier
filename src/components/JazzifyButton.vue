@@ -34,27 +34,28 @@ export default {
 
 <style lang="scss">
 
+  /* adapated from https://www.gradient-animator.com/ */
 .jazzify {
     background: linear-gradient(192deg, #691048, #ff76ca);
     background-size: 400% 400%;
 
-    -webkit-animation: jazzify 4s ease 1;
-    -moz-animation: jazzify 4s ease 1;
-    animation: jazzify 4s ease 1;
+    -webkit-animation: jazzify 3s ease 1;
+    -moz-animation: jazzify 3s ease 1;
+    animation: jazzify 3s ease 1;
 }
 
 @-webkit-keyframes jazzify {
-    0%{background-position:84% 0%; transform: scale(0.95);}
+    0%{background-position:84% 0%;}
     50%{background-position:17% 100%}
     100%{background-position:84% 0%}
 }
 @-moz-keyframes jazzify {
-    0%{background-position:84% 0%; transform: scale(0.95);}
+    0%{background-position:84% 0%;}
     50%{background-position:17% 100%}
     100%{background-position:84% 0%}
 }
 @keyframes jazzify {
-    0%{background-position:84% 0%; transform: scale(0.95);}
+    0%{background-position:84% 0%;}
     50%{background-position:17% 100%}
     100%{background-position:84% 0%}
 }
