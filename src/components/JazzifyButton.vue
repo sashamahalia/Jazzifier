@@ -39,9 +39,9 @@ export default {
     background: linear-gradient(192deg, #691048, #ff76ca);
     background-size: 400% 400%;
 
-    -webkit-animation: jazzify 3s ease 1;
-    -moz-animation: jazzify 3s ease 1;
-    animation: jazzify 3s ease 1;
+    -webkit-animation: jazzify 3s linear 1;
+    -moz-animation: jazzify 3s linear 1;
+    animation: jazzify 3s linear 1;
 }
 
 @-webkit-keyframes jazzify {
