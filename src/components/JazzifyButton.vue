@@ -20,10 +20,11 @@ export default {
     onClickJazzify() {
       
       // console.log("jazzify clicked")
-      this.$emit('jazzifyClicked')
+      this.$emit('jazzifyClicked');
       this.animate();
     },
     animate() {
+      // Animation syntax adapated from https://stackoverflow.com/questions/48652941/vue-click-animation-without-settimeout/51212606
       this.animated = true;
     }
   }
@@ -34,18 +35,28 @@ export default {
 <style lang="scss">
 
 .jazzify {
-  animation: jazzify 1.5s ease-in-out both 1;
-  animation-timing-function: linear;
+    background: linear-gradient(192deg, #691048, #ff76ca);
+    background-size: 400% 400%;
+
+    -webkit-animation: jazzify 4s ease 1;
+    -moz-animation: jazzify 4s ease 1;
+    animation: jazzify 4s ease 1;
 }
 
+@-webkit-keyframes jazzify {
+    0%{background-position:84% 0%; transform: scale(0.95);}
+    50%{background-position:17% 100%}
+    100%{background-position:84% 0%}
+}
+@-moz-keyframes jazzify {
+    0%{background-position:84% 0%; transform: scale(0.95);}
+    50%{background-position:17% 100%}
+    100%{background-position:84% 0%}
+}
 @keyframes jazzify {
-  0% {background-color: $darkest-purple; transform: scale(0.9)}
-  20% {background-color: $medium-purple; }
-  40% {background-color: $pink; }
-  60% {background-color: $light-pink; }
-  80% {background-color: $medium-purple;}
-  100% {background-color: $darkest-purple; }
-  
+    0%{background-position:84% 0%; transform: scale(0.95);}
+    50%{background-position:17% 100%}
+    100%{background-position:84% 0%}
 }
 
 </style>
