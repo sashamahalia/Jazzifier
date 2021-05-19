@@ -1,6 +1,6 @@
 # jazzifier
 
-Take a plain chord and press a button to jazzify it. Built in Vue, with Tone and Tonal libraries.
+Take a plain chord and press a button to jazzify it. Built in Vue, with Tone.js, Tonaljs and Sharp11 libraries.
 
 ## Project setup
 ```
