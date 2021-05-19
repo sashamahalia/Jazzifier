@@ -238,7 +238,7 @@ export default {
     piano() {
       // Multisampled piano, thanks to https://github.com/ledlamp/piano-sounds
       return new Tone.Sampler({
-        volume: -10,
+        volume: -15,
         urls: {
           C1: 'c1.mp3',
           C2: 'c2.mp3',
@@ -266,7 +266,7 @@ export default {
         type : "sawtooth",
         detune: 3,
         portamento: 0.5,
-        volume: -15
+        volume: -20
         }
       }).toDestination();
     },
@@ -278,7 +278,7 @@ export default {
       });
 
       return new Tone.PolySynth(Tone.FMSynth, {
-        volume: -10,
+        volume: -15,
         harmonicity: 1,
         modulationIndex: 10,
         oscillator : {
@@ -296,7 +296,7 @@ export default {
         harmonicity: 1,
         modulationIndex: 5,
         portamento: 2,
-        volume: -15,
+        volume: -20,
         detune: 3,
         oscillator : {
             type: "square"
@@ -304,6 +304,7 @@ export default {
     },
     harp() {
       return new Tone.Sampler({
+        volume: -5,
         urls: {
           C1: 'c0.mp3',
           C2: 'c1.mp3',
