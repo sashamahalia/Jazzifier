@@ -266,7 +266,7 @@ export default {
         type : "sawtooth",
         detune: 3,
         portamento: 0.5,
-        volume: -30
+        volume: -25
         }
       }).toDestination();
     },
@@ -278,7 +278,7 @@ export default {
       });
 
       return new Tone.PolySynth(Tone.FMSynth, {
-        volume: -30,
+        volume: -25,
         harmonicity: 1,
         modulationIndex: 10,
         oscillator : {
@@ -296,7 +296,7 @@ export default {
         harmonicity: 1,
         modulationIndex: 5,
         portamento: 2,
-        volume: -30,
+        volume: -25,
         detune: 3,
         oscillator : {
             type: "square"
