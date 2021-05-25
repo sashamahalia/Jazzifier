@@ -19,7 +19,6 @@ export default {
   methods: {
     onClickJazzify() {
       
-      // console.log("jazzify clicked")
       this.$emit('jazzifyClicked');
       this.animate();
     },
