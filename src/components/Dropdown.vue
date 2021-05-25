@@ -40,17 +40,14 @@ export default {
       position.chord = newChord;
     },
     beatId(position) {
-      // console.log(position);
       if (position === this.beat) {
         return "highlighted";
       }
-      // return `beat${position} BEAT: ${this.beat}`;
       return "";
       
     },
 
     capitalizedNumeral(position) {
-      // console.log("APRICOT*****",position);
 
       if (position.chord.includes("Ch")) {
         return position.chord;

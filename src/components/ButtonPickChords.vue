@@ -13,9 +13,7 @@ name: 'ButtonPickChords',
   props: ['disabled' ],
   methods: {
     onClickPickChords() {
-      console.log("clicked", this.disabled)
       if (!this.disabled) {
-        console.log(" not disabled")
         this.$emit('pickChordsClicked')
       }
     }

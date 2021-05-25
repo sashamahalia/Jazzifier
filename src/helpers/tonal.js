@@ -1,10 +1,12 @@
-// import { ChordType } from "@tonaljs/tonal";
+import { ChordType } from "@tonaljs/tonal";
 
-// export const getChords = () => {
-//   const funChords = ChordType.all().filter(chord => chord.aliases[0].length >= 3);
-//   // returns the first of the abrivations for the chord as a string
-//   return funChords.map(chord => chord.aliases[0]);
-// }
+export const getChords = () => {
+  const funChords = ChordType.all().filter(chord => chord.intervals.length > 3 && chord.intervals.length < 6);
+  // returns the first of the abrivations for the chord as a string
+  return funChords.map(chord => chord.aliases[0]);
+}
+console.log('chords objects', ChordType.all().filter(chord => chord.intervals.length > 3 && chord.intervals.length < 6));
+// console.log('get chords', getChords());
 
 // // gets all extensions that start with a minor symbol or dim
 // const minorExtensions = getChords().filter(chord => (chord.charAt(0) === 'm' && !chord.startsWith('maj')) || chord.startsWith('dim'));
@@ -33,5 +35,3 @@
 //     return `${chordName}${randomJazzChord(minorExtensions)}`
 //   }
 // };
-
-// console.log('chord change', chordChange('C', 'Minor'));

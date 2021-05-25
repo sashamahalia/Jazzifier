@@ -37,6 +37,7 @@ import ButtonPickChords from './components/ButtonPickChords'
 //helpers
 import { selectChords } from './helpers/chords'
 import { convertNoteToKeyboard } from './helpers/convertNoteToKeyboard'
+import { getChords } from './helpers/tonal'
 //libraries
 import * as Tone from 'tone'
 import s11 from 'sharp11';
@@ -107,6 +108,8 @@ export default {
 
     chordLoop() {
 
+      getChords;
+
       let tone = this.getInstrument;
 
       const loop = new Tone.Part((time, value) => {
@@ -133,14 +136,8 @@ export default {
           result = false;
         }
       }
-      // console.log("POTATO*********",result);
       return result;
     }
-  },
-  watch: {
-    // synthTone()  {
-    //   this.chordLoop.dispose();
-    // }
   },
 
   methods: {
@@ -150,24 +147,18 @@ export default {
       const randomNumber = Math.floor(Math.random() * (max - min) + min);
       
       return this.chords[randomNumber];
-      // return this.chords.length;
-      // return "chordchanged";
+
     },
 
     onPickChordsChildClick() {
-      // console.log("fully picked chords")
       this.chordLoop.dispose()
       for (let position of this.positions) {
-        // console.log(position.chord);
         position.chord=this.randomChord()
       }
     },
 
     jazzifyChord(position) {
       let newPosition = position;
-      //this code correctly sets to major/minor
-      //but it doesn't play well with the library that interprets the data
-      //it just interprets lowercase values as C major by default
       const modeNum = Math.random();
       if (modeNum < .16) {
         newPosition.mode = "dim";
@@ -195,24 +186,12 @@ export default {
         }
       }
 
-
-      // console.log("POTATO*************", newPosition.chord, newPosition.mode);
-      // if (Math.random() < .25) {
-      //   chord += "dim";
-      // }
-
-      // if (Math.random() < .25) {
-      //   chord += "9";
-      // }
       return newPosition;
     },
 
     onJazzifyChildClick() {
-      // console.log("fully jazzified")
       this.chordLoop.dispose()
       for (let position of this.positions) {
-        // console.log(position.chord);
-        // position.chord="II"
         position = this.jazzifyChord(position);
       }
     },
