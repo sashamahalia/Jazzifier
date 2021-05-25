@@ -37,7 +37,7 @@ import ButtonPickChords from './components/ButtonPickChords'
 //helpers
 import { selectChords } from './helpers/chords'
 import { convertNoteToKeyboard } from './helpers/convertNoteToKeyboard'
-import { getChords } from './helpers/tonal'
+import { chordChange } from './helpers/tonal'
 //libraries
 import * as Tone from 'tone'
 import s11 from 'sharp11';
@@ -67,8 +67,8 @@ export default {
       keys: ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B'],
       modes: ['Major', 'Minor'],
       scale: {key: 'C', mode: 'Major'},
-      beat: this.currentBeat,
-      chord: this.currentChord,
+      beat: -1,
+      chord: '',
       synthTones: ['piano', 'basic synth', 'fm wah', 'square', 'harp'],
       synthTone: 'piano',
       disabled: false
@@ -107,8 +107,6 @@ export default {
     },
 
     chordLoop() {
-
-      getChords;
 
       let tone = this.getInstrument;
 
@@ -159,32 +157,8 @@ export default {
 
     jazzifyChord(position) {
       let newPosition = position;
-      const modeNum = Math.random();
-      if (modeNum < .16) {
-        newPosition.mode = "dim";
-      } else if (modeNum >= .16 && modeNum <= .25) {
-        newPosition.mode = "aug";
-      } else if (modeNum > .25 && modeNum <= .62) {
-        newPosition.mode = "M";
-      } else {
-        newPosition.mode = "m";
-      }
 
-      if (newPosition.mode == "M" || newPosition.mode == "m") {
-        const majorNum = Math.random();
-        if (majorNum < .8) {
-          newPosition.mode += "7";
-        } else {
-          newPosition.mode += "9";
-        }
-      } else {
-        const seventhNum = Math.random();
-        if (seventhNum < .3) {
-          newPosition.mode += "7";
-        } else if (seventhNum > .9) {
-          newPosition.mode += "9";
-        }
-      }
+      newPosition.mode = chordChange(position.mode);
 
       return newPosition;
     },
