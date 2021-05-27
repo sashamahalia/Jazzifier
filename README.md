@@ -36,19 +36,31 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Dependencies
 @tonaljs/tonal
+
 sass 1.32.12
+
 core-js
+
 tone
+
 vue 2.6.11 or higher
+
 vue-select
 
 ### Dev Dependencies
 vue/cli-plugin-babel
+
 @vue/cli-plugin-eslint
+
 @vue/cli-service
+
 babel-eslint
+
 eslint
+
 eslint-plugin-vue
+
 sass-loader 7.1.0
+
 vue-template-compiler
 
