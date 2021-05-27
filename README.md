@@ -2,6 +2,15 @@
 
 Take a plain chord and press a button to jazzify it. Built in Vue, with Tone.js, Tonaljs and Sharp11 libraries.
 
+## Project Screenshots
+
+![home page](https://github.com/sashamahalia/Jazzifier/blob/master/docs/jazzifier-home-page.png?raw=true)
+
+![about page](https://github.com/sashamahalia/Jazzifier/blob/master/docs/jazzifier-about-page.png?raw=true)
+
+![Jazzification in action](https://github.com/sashamahalia/Jazzifier/blob/master/docs/chord-pick.png?raw=true)
+
+
 ## Project setup
 ```
 npm install
