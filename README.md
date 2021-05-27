@@ -2,7 +2,8 @@
 
 Take a plain chord and press a button to jazzify it. Built in Vue, with Tone.js, Tonaljs and Sharp11 libraries.
 
-## Project Screenshots
+
+## Screenshots
 
 ![home page](https://github.com/sashamahalia/Jazzifier/blob/master/docs/jazzifier-home-page.png?raw=true)
 
@@ -35,32 +36,20 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Dependencies
-@tonaljs/tonal
-
-sass 1.32.12
-
-core-js
-
-tone
-
-vue 2.6.11 or higher
-
-vue-select
+@tonaljs/tonal  
+sass 1.32.12  
+core-js  
+tone  
+vue 2.6.11 or higher  
+vue-select  
 
 ### Dev Dependencies
-vue/cli-plugin-babel
-
-@vue/cli-plugin-eslint
-
-@vue/cli-service
-
-babel-eslint
-
-eslint
-
-eslint-plugin-vue
-
-sass-loader 7.1.0
-
-vue-template-compiler
+vue/cli-plugin-babel  
+@vue/cli-plugin-eslint  
+@vue/cli-service  
+babel-eslint  
+eslint  
+eslint-plugin-vue  
+sass-loader 7.1.0  
+vue-template-compiler  
 
