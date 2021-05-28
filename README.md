@@ -5,6 +5,8 @@ Take a plain chord and press a button to jazzify it. Built in Vue, with Tone.js,
 
 ## Screenshots
 
+![gif of jazzifier functionality](https://github.com/sashamahalia/Jazzifier/blob/master/docs/jazzifiergif.gif?raw=true)
+
 ![home page](https://github.com/sashamahalia/Jazzifier/blob/master/docs/jazzifier-home-page.png?raw=true)
 
 ![about page](https://github.com/sashamahalia/Jazzifier/blob/master/docs/jazzifier-about-page.png?raw=true)
