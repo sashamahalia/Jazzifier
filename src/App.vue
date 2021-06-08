@@ -1,25 +1,27 @@
 <template>
   <div id="app">
     <NavComponent />
-    <div class="leftalign">
-      <div class="synth-menu">
-        <h4>Instrument:</h4>
-        <v-select :clearable="false" :disabled="disabled" :options="synthTones" :value="synthTone"
-        @input="instrument => updateInstrument(instrument)" name="Instrument" class="instrument"/>
+    <main>
+      <div class="leftalign">
+        <div class="synth-menu">
+          <h4>Instrument:</h4>
+          <v-select :clearable="false" :disabled="disabled" :options="synthTones" :value="synthTone"
+          @input="instrument => updateInstrument(instrument)" name="Instrument" class="instrument"/>
+        </div>
       </div>
-    </div>
-    <Piano :chord=chord />
-    <div class="flexbox">
-      <PlayButton @change="onPlayButtonClick" :disabled="disabled" :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
-      <ButtonPickChords @pickChordsClicked="onPickChordsChildClick" :disabled="disabled" />
-      <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" :disabled="disabled" />
-    </div>
-    <div class="keymenu">
-    <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
-    </div>
-    <div class="dropdowns">
-      <Dropdown @chord-toggle="onChordToggle" :select-chords="selectChords" :chord-names="getChordNames" :beat="beat" :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale" :chord="chord" />
-    </div>
+      <Piano :chord=chord />
+      <div class="flexbox">
+        <PlayButton @change="onPlayButtonClick" :disabled="disabled" :chord-loop="chordLoop" :selected-chords="selectChords" :chord="chord" :beat="beat"/>
+        <ButtonPickChords @pickChordsClicked="onPickChordsChildClick" :disabled="disabled" />
+        <JazzifyButton :chord="chord" @jazzifyClicked="onJazzifyChildClick" :disabled="disabled" />
+      </div>
+      <div class="keymenu">
+      <MenuList :disabled="disabled" :chord-loop="chordLoop" :keys="keys" :modes="modes" :scale="scale"/>
+      </div>
+      <div class="dropdowns">
+        <Dropdown @chord-toggle="onChordToggle" :select-chords="selectChords" :chord-names="getChordNames" :beat="beat" :disabled="disabled" :chord-loop="chordLoop" :positions="positions" :chords="chords" :modes="modes" :scale="scale" :chord="chord" />
+      </div>
+    </main>
   </div>
 </template>
 
