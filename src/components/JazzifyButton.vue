@@ -1,7 +1,7 @@
 <template>
   <div>
     <button id="jazzify" :class="{'jazzify': animated}" @animationend="animated = false" @click="onClickJazzify" :disabled="disabled" >
-      <span role="img">&#127927;</span> Jazzify! <span role="img">&#127927;</span> 
+      <span role="img" aria-label="Saxophone emoji">&#127927;</span> Jazzify! <span role="img" aria-label="Saxophone emoji">&#127927;</span>
     </button>
   </div>
 </template>
