@@ -1,7 +1,7 @@
 <template>
   <div>
     <button id="jazzify" :class="{'jazzify': animated}" @animationend="animated = false" @click="onClickJazzify" :disabled="disabled" >
-      &#127927; Jazzify! &#127927;
+      <span role="img">&#127927;</span> Jazzify! <span role="img">&#127927;</span> 
     </button>
   </div>
 </template>
