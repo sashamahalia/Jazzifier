@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button id="jazzify" :class="{'jazzify': animated}" @animationend="animated = false" @click="onClickJazzify" :disabled="disabled" >
+    <button id="jazzify" :class="{'jazzify': animated}" @animationend="animated = false" @click="onSelectJazzify" @keypress="onSelectJazzify" :disabled="disabled" >
       <span role="img" aria-label="Saxophone emoji">&#127927;</span> Jazzify! <span role="img" aria-label="Saxophone emoji">&#127927;</span>
     </button>
   </div>
@@ -17,7 +17,7 @@ export default {
   },
   props: ['disabled' ],
   methods: {
-    onClickJazzify() {
+    onSelectJazzify() {
       
       this.$emit('jazzifyClicked');
       this.animate();

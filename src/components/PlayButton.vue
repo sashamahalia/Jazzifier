@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <h2>{{ currentChord }}</h2> -->
-    <button id="play" @click="handleClick">
+    <button id="play" @click="handlePlaySelect" @keypress="handlePlaySelect">
       {{ play }}
     </button>
     <!-- <h3>{{ currentBeat }}</h3> -->
@@ -22,7 +22,7 @@ import { bpm } from '../helpers/bpm'
   },
   props: ['selectedChords', 'chordLoop', 'disabled'],
   methods: {
-    handleClick() {
+    handlePlaySelect() {
       this.$emit('change');
       bpm(100);
       this.chordLoop;
