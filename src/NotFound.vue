@@ -1,7 +1,7 @@
 <template lang="">
   <div id="app">
     <NavComponent />
-    <h4>Page not found</h4>
+    <h1>Page not found</h1>
     <p class="about-paragraph">Whatever you're searching for isn't here. <a href="/">Go back</a>
       </p>
   </div>

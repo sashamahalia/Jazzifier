@@ -1,7 +1,7 @@
 <template>
   <section id="chord-select">
     <div v-for="position, index of positions" :key="position.beat" class="chord">
-      <h4 @click="toggleChords(position, index)" @keypress="toggleChords(position, index)" :class="beatId(position.beat)">{{ chordNames[index] }}</h4>
+      <h3 @click="toggleChords(position, index)" @keypress="toggleChords(position, index)" :class="beatId(position.beat)">{{ chordNames[index] }}</h3>
       <v-select
         :disabled="disabled"
         :clearable="false"

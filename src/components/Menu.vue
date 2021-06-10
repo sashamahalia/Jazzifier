@@ -1,6 +1,6 @@
 <template>
   <div :class="name" class="menu">
-    <h4>{{ name }}</h4>
+    <h2>{{ name }}</h2>
     <v-select :disabled="disabled" :clearable="false" :options="options" @input="chordLoop.dispose()" :placeholder="scale[type]" :value="scale[type]" v-model="scale[type]"/>
   </div>
 </template>

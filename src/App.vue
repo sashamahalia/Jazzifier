@@ -4,7 +4,7 @@
     <main>
       <div class="leftalign">
         <div class="synth-menu">
-          <h4>Instrument:</h4>
+          <h2>Instrument:</h2>
           <v-select :clearable="false" :disabled="disabled" :options="synthTones" :value="synthTone"
           @input="instrument => updateInstrument(instrument)" name="Instrument" class="instrument"/>
         </div>
