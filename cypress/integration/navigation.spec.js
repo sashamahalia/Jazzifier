@@ -10,4 +10,12 @@ describe("Navigation", () => {
       .click();
       cy.contains('Instrument');
   });
+  it("should select and change chords", () => {
+    cy.contains('Instrument');
+    cy.get('.dropdowns').contains('Chord 1').click();
+    cy.get('.dropdowns').contains('II').click();
+
+    cy.get('.dropdowns').contains('DM')
+
+  });
 });
