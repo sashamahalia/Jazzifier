@@ -2,7 +2,7 @@
 
 // export const getChords = () => {
 //   const funChords = ChordType.all().filter(chord => chord.aliases[0].length >= 3);
-//   // returns the first of the abrivations for the chord as a string
+//   // returns the first of the abbreviations for the chord as a string
 //   return funChords.map(chord => chord.aliases[0]);
 // }
 
@@ -19,7 +19,7 @@
 //   const min = Math.ceil(0);
 //   const max = Math.floor(chordArray.length - 1);
 //   const randomNumber = Math.floor(Math.random() * (max - min) + min);
-  
+
 //   return chordArray[randomNumber];
 // };
 
